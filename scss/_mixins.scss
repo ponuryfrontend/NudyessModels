@@ -1,0 +1,11 @@
+@mixin focusWhite {
+	outline: none;
+	border: 1px solid #ffff;
+	border-radius: 5px;
+}
+
+@mixin focusBrown {
+	outline: none;
+	border: 1px solid #583101;
+	border-radius: 5px;
+}
