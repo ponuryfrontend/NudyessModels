@@ -6,6 +6,11 @@
   padding: 0;
 }
 
+html,
+body {
+  height: 100%;
+}
+
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -40,52 +45,54 @@ body {
   color: #583101;
 }
 
-.header {
-  position: fixed;
-  width: 100%;
+.main-banner {
   height: 100vh;
-  overflow: hidden;
-  transition: filter linear 0.6s;
+  width: 100%;
+  background-image: url("../img/mobile-banner-491-736.webp");
+  background-size: cover;
+  background-position: center;
 }
-.header__box {
-  position: relative;
+
+.fixed-top-header {
+  position: fixed;
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 100%;
+  align-items: center;
+  width: 100%;
 }
-.header__banner {
-  position: absolute;
-  display: block;
-  top: 0px;
-}
-.header__banner-img {
-  z-index: 100;
-}
-.header__logo {
-  padding: 1.6em 0 1.15em;
-  z-index: 10;
-}
-.header__burger-btn {
-  position: absolute;
-  top: 0px;
-  right: 0px;
-  padding: 1.45em;
-  background-color: transparent;
+
+.logo {
+  margin: 0.6em;
+  padding: 0.75em 1em;
   border: 1px solid transparent;
-  z-index: 10;
+  cursor: pointer;
 }
-.header__burger-btn:focus {
+.logo:focus {
   outline: none;
   border: 1px solid #583101;
   border-radius: 5px;
 }
-.header__burger-btn-box {
+
+.burger-btn {
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  margin: 0.25em;
+  padding: 1.4em;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+.burger-btn:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
+}
+.burger-btn__box {
   position: relative;
   width: 30px;
   height: 20px;
 }
-.header__burger-btn-bars, .header__burger-btn-bars::after, .header__burger-btn-bars::before {
+.burger-btn__bars, .burger-btn__bars::after, .burger-btn__bars::before {
   position: absolute;
   right: 0;
   height: 2px;
@@ -94,14 +101,14 @@ body {
   transition: width 0.3s;
   border-radius: 3px;
 }
-.header__burger-btn-bars {
+.burger-btn__bars {
   width: 100%;
 }
-.header__burger-btn-bars::after {
+.burger-btn__bars::after {
   top: 8px;
   width: 70%;
 }
-.header__burger-btn-bars::before {
+.burger-btn__bars::before {
   top: 16px;
   width: 45%;
 }
@@ -110,10 +117,12 @@ body {
   position: fixed;
   height: 100vh;
   width: 100%;
+  top: 0;
   transform: translateX(100%);
   opacity: 0;
   transition: opacity ease-in 1.2s;
   overflow: hidden;
+  z-index: 10;
 }
 .nav-mobile--active {
   transform: translateX(0);
@@ -166,4 +175,41 @@ body {
 }
 .nav-mobile__insta-icon {
   margin: 0.5em;
+}
+
+.footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 2em;
+}
+.footer__insta-box {
+  margin: 2.35em 0 0;
+  padding: 1.5em;
+}
+.footer__logo {
+  margin: 0.6em;
+  padding: 0.75em 1em;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.footer__menu-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  margin: 0.5em 1.5em;
+}
+.footer__menu-links {
+  font-size: 1.15rem;
+  margin: 0.75em;
+  padding: 0.45em;
+  text-transform: capitalize;
+  color: #583101;
+  cursor: pointer;
+}
+.footer__copyright {
+  margin: 1.5em 0 3.5em;
 }/*# sourceMappingURL=main.css.map */

@@ -1,17 +1,17 @@
-const mobileMenuBtn = document.querySelector('.header__burger-btn')
+const burgerBtn = document.querySelector('.burger-btn')
 const mobileNav = document.querySelector('.nav-mobile')
+const mainBanner = document.querySelector('.main-banner')
 const closeMenuBtn = document.querySelector('.nav-mobile__close-btn')
-const header = document.querySelector('.header')
 
-const mobileMenuToggle = () => {
+const showMobileMenu = () => {
 	mobileNav.classList.add('nav-mobile--active')
-	header.style.filter = 'blur(12.5px)'
+	mainBanner.style.filter = 'blur(10.5px)'
 }
 
-const closingMobileMenu = () => {
+const closeMobileMenu = () => {
 	mobileNav.classList.remove('nav-mobile--active')
-	header.style.filter = 'none'
+	mainBanner.style.filter = 'none'
 }
 
-mobileMenuBtn.addEventListener('click', mobileMenuToggle)
-closeMenuBtn.addEventListener('click', closingMobileMenu)
+burgerBtn.addEventListener('click', showMobileMenu)
+closeMenuBtn.addEventListener('click', closeMobileMenu)
