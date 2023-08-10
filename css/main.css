@@ -48,9 +48,11 @@ body {
 .main-banner {
   height: 100vh;
   width: 100%;
-  background-image: url("../img/mobile-banner-491-736.webp");
+  background-image: url("../img/mobile-banner-750-1124.webp");
   background-size: cover;
   background-position: center;
+  transition: filter linear 1s;
+  overflow: hidden;
 }
 
 .fixed-top-header {
@@ -118,9 +120,9 @@ body {
   height: 100vh;
   width: 100%;
   top: 0;
-  transform: translateX(100%);
+  transform: translateX(-100%);
   opacity: 0;
-  transition: opacity ease-in 1.2s;
+  transition: opacity linear 1.5s;
   overflow: hidden;
   z-index: 10;
 }
@@ -130,9 +132,9 @@ body {
 }
 .nav-mobile__close-btn {
   position: absolute;
-  top: 0px;
-  right: 0px;
-  padding: 1.45em;
+  top: 1.5em;
+  right: 1.5em;
+  padding: 1.5em;
   background-color: transparent;
 }
 .nav-mobile__box {
@@ -184,16 +186,27 @@ body {
   align-items: center;
   width: 100%;
   margin-bottom: 2em;
+  overflow: hidden;
 }
 .footer__insta-box {
   margin: 2.35em 0 0;
   padding: 1.5em;
+}
+.footer__insta-box:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
 }
 .footer__logo {
   margin: 0.6em;
   padding: 0.75em 1em;
   border: 1px solid transparent;
   cursor: pointer;
+}
+.footer__logo:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
 }
 .footer__menu-box {
   display: flex;
@@ -203,12 +216,18 @@ body {
   margin: 0.5em 1.5em;
 }
 .footer__menu-links {
-  font-size: 1.15rem;
+  font-size: 1.2rem;
   margin: 0.75em;
   padding: 0.45em;
   text-transform: capitalize;
   color: #583101;
+  border: 1px solid transparent;
   cursor: pointer;
+}
+.footer__menu-links:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
 }
 .footer__copyright {
   margin: 1.5em 0 3.5em;
