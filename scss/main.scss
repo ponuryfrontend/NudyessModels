@@ -7,13 +7,20 @@ body {
 	color: $brown-color;
 }
 
+.scroll-lock {
+	overflow: hidden;
+}
+
+.white-background {
+	background-color: $white-color;
+}
+
 .main-banner {
 	height: 100vh;
 	width: 100%;
 	background-image: url('../img/mobile-banner-750-1124.webp');
 	background-size: cover;
 	background-position: center;
-	transition: filter linear 1s;
 	overflow: hidden;
 }
 
@@ -22,9 +29,9 @@ body {
 .fixed-top-header {
 	position: fixed;
 	display: flex;
+	width: 100%;
 	justify-content: center;
 	align-items: center;
-	width: 100%;
 }
 
 .logo {
@@ -89,13 +96,14 @@ body {
 // NAVIGATION
 
 .nav-mobile {
+	// display: none;
 	position: fixed;
 	height: 100vh;
 	width: 100%;
 	top: 0;
 	transform: translateX(-100%);
 	opacity: 0;
-	transition: opacity linear 1.5s;
+	transition: opacity linear 1s;
 	overflow: hidden;
 	z-index: 10;
 
@@ -117,6 +125,11 @@ body {
 		flex-direction: column;
 		justify-content: center;
 		height: 100%;
+		background-image: url('../img/blured-mobile-banner-750-1124.webp');
+		background-size: cover;
+		background-position: center;
+		overflow: hidden;
+		z-index: 10;
 	}
 
 	&__links {
@@ -154,6 +167,22 @@ body {
 
 	&__insta-icon {
 		margin: 0.5em;
+	}
+}
+
+// H1
+
+.heading {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 15%;
+
+	&__women {
+		font-size: 1.8rem;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		font-weight: 200;
 	}
 }
 
