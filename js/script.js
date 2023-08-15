@@ -1,17 +1,17 @@
 const burgerBtn = document.querySelector('.burger-btn')
-const mobileNav = document.querySelector('.nav-mobile')
-const closeMenuBtn = document.querySelector('.nav-mobile__close-btn')
+const mobileNav = document.querySelector('.nav')
+const closeMenuBtn = document.querySelector('.nav__close-btn')
 const fixedHeader = document.querySelector('.fixed-top-header')
 const footerYear = document.querySelector('.footer__year')
 
 const showMobileMenu = () => {
-	mobileNav.classList.add('nav-mobile--active')
-	document.body.classList.add('scroll-lock')
+	mobileNav.classList.add('nav--active')
+	document.body.classList.add('lock-scroll')
 }
 
 const closeMobileMenu = () => {
-	mobileNav.classList.remove('nav-mobile--active')
-	document.body.classList.remove('scroll-lock')
+	mobileNav.classList.remove('nav--active')
+	document.body.classList.remove('lock-scroll')
 }
 
 const whiteningHeader = () => {

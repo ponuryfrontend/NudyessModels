@@ -7,6 +7,12 @@ body {
 	color: $brown-color;
 }
 
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
 .lock-scroll {
 	overflow: hidden;
 }
@@ -14,15 +20,6 @@ body {
 .white-background {
 	background-color: $white-color;
 	box-shadow: 0px 1px 30px 1px $light-color;
-}
-
-.main-banner {
-	height: 100vh;
-	width: 100vw;
-	background-image: url('../img/mobile-banner-750-1124.webp');
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
 }
 
 // FIXED HEADER
@@ -177,6 +174,68 @@ body {
 	display: none;
 }
 
+// H2
+
+.heading {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 15%;
+
+	&__women {
+		font-size: 1.7rem;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		font-weight: 200;
+	}
+}
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+    gap: 1.5em;
+    margin-top: 6em;
+}
+
+.model-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+    border: 1px solid transparent;
+
+    &:focus {
+		@include focusBrown;
+	}
+
+	&__img {
+		width: 100%;
+        cursor: pointer;
+	}
+
+    &__box {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin: 0.75em;
+    }
+
+    &__name {
+        margin-bottom: 0.3em;
+        font-size: 1.15rem;
+        text-transform: uppercase;
+        color: $brown-color;
+        letter-spacing: 0.15em;
+    }
+
+    &__dimensions {
+        font-size: 1.15rem;
+        color: $brown-color;
+    }
+}
+
 // FOOTER
 
 .footer {
@@ -236,12 +295,6 @@ body {
 }
 
 @media (min-width: 1024px) {
-	.wrapper {
-		margin: 0 auto;
-		width: 100%;
-		max-width: 1200px;
-	}
-
 	.burger-btn {
 		&:hover {
 			.burger-btn__bars::after,
