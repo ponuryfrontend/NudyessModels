@@ -45,6 +45,12 @@ body {
   color: #583101;
 }
 
+.wrapper {
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1200px;
+}
+
 .lock-scroll {
   overflow: hidden;
 }
@@ -145,6 +151,12 @@ body {
   right: 1.25em;
   padding: 1.5em;
   background-color: transparent;
+  cursor: pointer;
+}
+.nav__close-btn:focus {
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 .nav__box {
   display: flex;
@@ -193,10 +205,6 @@ body {
 }
 .nav__insta-icon {
   margin: 0.5em;
-}
-
-.nav-deskop {
-  display: none;
 }
 
 .footer {
@@ -253,11 +261,70 @@ body {
   margin: 1.5em 0 3.5em;
 }
 
+.heading {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 15%;
+}
+.heading__women {
+  font-size: 1.6rem;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-weight: 200;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: auto;
+  gap: 1.2em;
+  margin-top: 6em;
+}
+
+.model-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid transparent;
+}
+.model-card:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
+}
+.model-card__img {
+  width: 100%;
+  cursor: pointer;
+}
+.model-card__box {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0.75em;
+}
+.model-card__name {
+  margin-bottom: 0.3em;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  color: #583101;
+  letter-spacing: 0.15em;
+}
+.model-card__dimensions {
+  font-size: 1.2rem;
+  color: #583101;
+}
+
 @media (min-width: 1024px) {
   .wrapper {
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
+  }
+  .main-banner {
+    background-image: url("../img/deskop-banner-2674-1783.webp");
   }
   .burger-btn:hover .burger-btn__bars::after,
   .burger-btn:hover .burger-btn__bars::before {
@@ -266,10 +333,25 @@ body {
   .burger-btn__bars::before {
     transition-delay: 0.15s;
   }
-  .nav-mobile {
-    display: none;
+  .nav__box {
+    background-image: url("../img/blured-deskop-banner-2674-1783.webp");
   }
-  .nav-deskop {
-    display: block;
+  .nav__link {
+    font-size: 1.9rem;
+    font-weight: 800;
+  }
+  .grid-container {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1.5em;
+    margin-top: 6em;
+  }
+  .model-card__box {
+    margin: 1em;
+  }
+  .model-card__name {
+    font-size: 1.5rem;
+  }
+  .model-card__dimensions {
+    font-size: 1.45rem;
   }
 }/*# sourceMappingURL=main.css.map */

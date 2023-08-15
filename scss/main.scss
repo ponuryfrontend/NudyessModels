@@ -7,6 +7,12 @@ body {
 	color: $brown-color;
 }
 
+.wrapper {
+	margin: 0 auto;
+	width: 100%;
+	max-width: 1200px;
+}
+
 .lock-scroll {
 	overflow: hidden;
 }
@@ -119,6 +125,11 @@ body {
 		right: 1.25em;
 		padding: 1.5em;
 		background-color: transparent;
+		cursor: pointer;
+
+		&:focus {
+			@include focusWhite;
+		}
 	}
 
 	&__box {
@@ -171,10 +182,6 @@ body {
 	&__insta-icon {
 		margin: 0.5em;
 	}
-}
-
-.nav-deskop {
-	display: none;
 }
 
 // FOOTER
@@ -235,11 +242,79 @@ body {
 	}
 }
 
+// H2
+
+.heading {
+	display: flex;
+	justify-content: center;
+	align-items: flex-end;
+	height: 15%;
+
+	&__women {
+		font-size: 1.6rem;
+		text-transform: uppercase;
+		letter-spacing: 4px;
+		font-weight: 200;
+	}
+}
+
+// WOMEN - MODELS LIST
+
+.grid-container {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	gap: 1.2em;
+	margin-top: 6em;
+}
+
+.model-card {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid transparent;
+
+	&:focus {
+		@include focusBrown;
+	}
+
+	&__img {
+		width: 100%;
+		cursor: pointer;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin: 0.75em;
+	}
+
+	&__name {
+		margin-bottom: 0.3em;
+		font-size: 1.2rem;
+		text-transform: uppercase;
+		color: $brown-color;
+		letter-spacing: 0.15em;
+	}
+
+	&__dimensions {
+		font-size: 1.2rem;
+		color: $brown-color;
+	}
+}
+
 @media (min-width: 1024px) {
 	.wrapper {
 		margin: 0 auto;
 		width: 100%;
 		max-width: 1200px;
+	}
+
+	.main-banner {
+		background-image: url('../img/deskop-banner-2674-1783.webp');
 	}
 
 	.burger-btn {
@@ -256,11 +331,34 @@ body {
 		}
 	}
 
-	.nav-mobile {
-		display: none;
+	.nav {
+		&__box {
+			background-image: url('../img/blured-deskop-banner-2674-1783.webp');
+		}
+
+		&__link {
+			font-size: 1.9rem;
+			font-weight: 800;
+		}
 	}
 
-	.nav-deskop {
-		display: block;
+	.grid-container {
+		grid-template-columns: repeat(4, 1fr);
+		gap: 1.5em;
+		margin-top: 6em;
+	}
+
+	.model-card {
+		&__box {
+			margin: 1em;
+		}
+
+		&__name {
+			font-size: 1.5rem;
+		}
+
+		&__dimensions {
+			font-size: 1.45rem;
+		}
 	}
 }
