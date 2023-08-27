@@ -242,7 +242,7 @@ body {
 	}
 }
 
-// H2
+// H1
 
 .heading {
 	display: flex;
@@ -305,6 +305,26 @@ body {
 		color: $brown-color;
 	}
 }
+
+// MAIN PAGE OF MODEL
+
+.model-banner {
+	height: 70vh;
+	width: 100vw;
+	background-image: url('../img/mobile-banner-750-1124.webp');
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+.grid-container-model {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	gap: 1.2em;
+	margin-top: 6em;
+}
+
 
 // CONTACT PAGE
 
@@ -392,7 +412,7 @@ body {
 		}
 
 		&__link {
-			font-size: 1.9rem;
+			font-size: 2rem;
 			font-weight: 800;
 		}
 	}
@@ -409,11 +429,11 @@ body {
 		}
 
 		&__name {
-			font-size: 1.5rem;
+			font-size: 1.55rem;
 		}
 
 		&__dimensions {
-			font-size: 1.45rem;
+			font-size: 1.5rem;
 		}
 	}
 
@@ -424,20 +444,35 @@ body {
 			font-size: 1.5rem;
 			letter-spacing: 0.75em;
 		}
-	
+
 		&__job-title {
 			letter-spacing: 0.5em;
 			font-size: 1.1rem;
 		}
-	
+
 		&__phone {
 			font-size: 1.5rem;
 			letter-spacing: 0.45em;
 		}
-	
+
 		&__email {
 			font-size: 1.4rem;
 			letter-spacing: 0.35em;
 		}
+	}
+
+	.footer {
+		&__menu-links {
+			font-size: 1.6rem;
+		}
+
+		&__copyright {
+			font-size: 1.3rem;
+		}
+	}
+
+	.model-banner {
+		height: 85vh;
+		background-image: url('../img/deskop-banner-2674-1783.webp');
 	}
 }
