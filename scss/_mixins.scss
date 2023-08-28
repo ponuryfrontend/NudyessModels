@@ -9,3 +9,9 @@
 	border: 1px solid #583101;
 	border-radius: 5px;
 }
+
+@mixin focusIcon {
+	outline: none;
+	border: 1px solid #583101;
+	border-radius: 50%;
+}

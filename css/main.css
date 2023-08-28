@@ -334,6 +334,41 @@ body {
   margin-top: 6em;
 }
 
+.icons {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  padding-bottom: 2em;
+}
+.icons__name {
+  margin-bottom: 7.5em;
+  font-size: 2.5rem;
+  color: white;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.3em;
+}
+.icons__box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  width: 100%;
+}
+.icons__button {
+  padding: 0.5em;
+  border: 1px solid transparent;
+  border-radius: 50%;
+  background-color: transparent;
+}
+.icons__button:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 50%;
+}
+
 .contact {
   display: flex;
   flex-direction: column;
