@@ -10,8 +10,20 @@
 	border-radius: 5px;
 }
 
-@mixin focusIcon {
-	outline: none;
-	border: 1px solid #583101;
-	border-radius: 50%;
+@mixin modelDetails {
+	color: #ffff;
+	font-weight: 700;
+	text-transform: uppercase;
+	text-align: center;
+	letter-spacing: 0.3em;
+}
+
+@mixin closeBtn {
+	position: absolute;
+	top: 1.25em;
+	right: 1.25em;
+	padding: 1.5em;
+	background-color: transparent;
+	border: 1px solid transparent;
+	cursor: pointer;
 }

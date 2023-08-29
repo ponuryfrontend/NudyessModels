@@ -151,6 +151,7 @@ body {
   right: 1.25em;
   padding: 1.5em;
   background-color: transparent;
+  border: 1px solid transparent;
   cursor: pointer;
 }
 .nav__close-btn:focus {
@@ -309,6 +310,7 @@ body {
   margin-bottom: 0.3em;
   font-size: 1.2rem;
   text-transform: uppercase;
+  text-align: center;
   color: #583101;
   letter-spacing: 0.15em;
 }
@@ -318,7 +320,7 @@ body {
 }
 
 .model-banner {
-  height: 70vh;
+  height: 85vh;
   width: 100vw;
   background-image: url("../img/mobile-banner-750-1124.webp");
   background-size: cover;
@@ -334,39 +336,125 @@ body {
   margin-top: 6em;
 }
 
-.icons {
+.buttons {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   flex-direction: column;
   height: 100%;
-  padding-bottom: 2em;
+  padding-bottom: 3em;
 }
-.icons__name {
+.buttons__model-name {
   margin-bottom: 7.5em;
   font-size: 2.5rem;
   color: white;
-  font-weight: 900;
+  font-weight: 700;
   text-transform: uppercase;
+  text-align: center;
   letter-spacing: 0.3em;
 }
-.icons__box {
+.buttons__box {
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   justify-content: space-evenly;
   align-items: flex-end;
   width: 100%;
 }
-.icons__button {
-  padding: 0.5em;
+.buttons__dimensions, .buttons__instagram {
+  padding: 1em 2em;
+  margin: 0.5em;
+  font-size: 1rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: #583101;
+  letter-spacing: 0.15em;
   border: 1px solid transparent;
-  border-radius: 50%;
-  background-color: transparent;
+  border-radius: 8px;
+  background-color: white;
 }
-.icons__button:focus {
+.buttons__dimensions:focus, .buttons__instagram:focus {
   outline: none;
   border: 1px solid #583101;
-  border-radius: 50%;
+  border-radius: 5px;
+}
+
+.main-model {
+  position: relative;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity linear 1s;
+}
+.main-model--active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.main-model__box {
+  position: absolute;
+  height: 100vh;
+  width: 100%;
+  background-image: url("../img/blured-mobile-banner-750-1124.webp");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  z-index: 10;
+}
+.main-model__close-btn {
+  position: absolute;
+  top: 1.25em;
+  right: 1.25em;
+  padding: 1.5em;
+  background-color: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+}
+.main-model__close-btn:focus {
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
+}
+.main-model__items {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+.main-model__name {
+  margin-bottom: 1.5em;
+  font-size: 1.8rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3em;
+}
+.main-model__dimensions-box {
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3em;
+  margin: 8em;
+}
+.main-model__dimensions {
+  padding: 1em;
+  font-size: 1.35rem;
+}
+.main-model__contact {
+  padding: 1em;
+  font-size: 1.35rem;
+  color: white;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 0.3em;
+  border: 1px solid transparent;
+}
+.main-model__contact:focus {
+  outline: none;
+  border: 1px solid white;
+  border-radius: 5px;
 }
 
 .contact {
@@ -482,5 +570,8 @@ body {
   .model-banner {
     height: 85vh;
     background-image: url("../img/deskop-banner-2674-1783.webp");
+  }
+  .main-model__box {
+    background-image: url("../img/blured-deskop-banner-2674-1783.webp");
   }
 }/*# sourceMappingURL=main.css.map */

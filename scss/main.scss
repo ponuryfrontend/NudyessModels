@@ -120,12 +120,7 @@ body {
 	}
 
 	&__close-btn {
-		position: absolute;
-		top: 1.25em;
-		right: 1.25em;
-		padding: 1.5em;
-		background-color: transparent;
-		cursor: pointer;
+		@include closeBtn;
 
 		&:focus {
 			@include focusWhite;
@@ -296,6 +291,7 @@ body {
 		margin-bottom: 0.3em;
 		font-size: 1.2rem;
 		text-transform: uppercase;
+		text-align: center;
 		color: $brown-color;
 		letter-spacing: 0.15em;
 	}
@@ -309,7 +305,7 @@ body {
 // MAIN PAGE OF MODEL
 
 .model-banner {
-	height: 70vh;
+	height: 85vh;
 	width: 100vw;
 	background-image: url('../img/mobile-banner-750-1124.webp');
 	background-size: cover;
@@ -325,39 +321,112 @@ body {
 	margin-top: 6em;
 }
 
-.icons {
+.buttons {
 	display: flex;
 	justify-content: flex-end;
 	align-items: center;
 	flex-direction: column;
 	height: 100%;
-	padding-bottom: 2em;
+	padding-bottom: 3em;
 
-	&__name {
+	&__model-name {
 		margin-bottom: 7.5em;
 		font-size: 2.5rem;
-		color: $white-color;
-		font-weight: 900;
-		text-transform: uppercase;
-		letter-spacing: 0.3em;
+		@include modelDetails;
 	}
 
 	&__box {
 		display: flex;
+		flex-wrap: wrap;
 		flex-direction: row;
 		justify-content: space-evenly;
 		align-items: flex-end;
 		width: 100%;
 	}
 
-	&__button {
-		padding: 0.5em;
+	&__dimensions,
+	&__instagram {
+		padding: 1em 2em;
+		margin: 0.5em;
+		font-size: 1rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		color: $brown-color;
+		letter-spacing: 0.15em;
 		border: 1px solid transparent;
-		border-radius: 50%;
-		background-color: transparent;
+		border-radius: 8px;
+		background-color: $white-color;
 
 		&:focus {
-			@include focusIcon;
+			@include focusBrown;
+		}
+	}
+}
+
+// DIMENSIONS ON MAIN MODEL PAGE
+
+.main-model {
+	position: relative;
+	transform: translateX(-100%);
+	opacity: 0;
+	transition: opacity linear 1s;
+
+	&--active {
+		transform: translateX(0);
+		opacity: 1;
+	}
+
+	&__box {
+		position: absolute;
+		height: 100vh;
+		width: 100%;
+		background-image: url('../img/blured-mobile-banner-750-1124.webp');
+		background-size: cover;
+		background-position: center;
+		overflow: hidden;
+		z-index: 10;
+	}
+
+	&__close-btn {
+		@include closeBtn;
+
+		&:focus {
+			@include focusWhite;
+		}
+	}
+
+	&__items {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 100%;
+	}
+
+	&__name {
+		margin-bottom: 1.5em;
+		font-size: 1.8rem;
+		@include modelDetails;
+	}
+
+	&__dimensions-box {
+		@include modelDetails;
+		margin: 8em;
+	}
+
+	&__dimensions {
+		padding: 1em;
+		font-size: 1.35rem;
+	}
+
+	&__contact {
+		padding: 1em;
+		font-size: 1.35rem;
+		@include modelDetails;
+		border: 1px solid transparent;
+
+		&:focus {
+			@include focusWhite;
 		}
 	}
 }
@@ -510,5 +579,11 @@ body {
 	.model-banner {
 		height: 85vh;
 		background-image: url('../img/deskop-banner-2674-1783.webp');
+	}
+
+	.main-model {
+		&__box {
+			background-image: url('../img/blured-deskop-banner-2674-1783.webp');
+		}
 	}
 }
