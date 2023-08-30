@@ -366,10 +366,11 @@ body {
 // DIMENSIONS ON MAIN MODEL PAGE
 
 .main-model {
-	position: relative;
+	position: fixed;
 	transform: translateX(-100%);
 	opacity: 0;
 	transition: opacity linear 1s;
+	overflow: hidden;
 
 	&--active {
 		transform: translateX(0);
@@ -377,14 +378,11 @@ body {
 	}
 
 	&__box {
-		position: absolute;
 		height: 100vh;
-		width: 100%;
+		width: 100vw;
 		background-image: url('../img/blured-mobile-banner-750-1124.webp');
 		background-size: cover;
 		background-position: center;
-		overflow: hidden;
-		z-index: 10;
 	}
 
 	&__close-btn {
