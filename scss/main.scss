@@ -200,7 +200,7 @@ body {
 	}
 
 	&__logo {
-		margin: 0.6em;
+		margin: 0.6em 0.6em 3.5em;
 		padding: 0.75em 1em;
 		border: 1px solid transparent;
 		cursor: pointer;
@@ -215,14 +215,13 @@ body {
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
-		margin: 0.5em 1.5em;
 	}
 
 	&__menu-links {
 		font-size: 1.2rem;
 		margin: 0.75em;
 		padding: 0.45em;
-		text-transform: capitalize;
+		text-transform: uppercase;
 		color: $brown-color;
 		border: 1px solid transparent;
 		cursor: pointer;
@@ -302,67 +301,6 @@ body {
 	}
 }
 
-// MAIN PAGE OF MODEL
-
-.model-banner {
-	height: 85vh;
-	width: 100vw;
-	background-image: url('../img/mobile-banner-750-1124.webp');
-	background-size: cover;
-	background-position: center;
-	overflow: hidden;
-}
-
-.grid-container-model {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	grid-template-rows: auto;
-	gap: 1.2em;
-	margin-top: 6em;
-}
-
-.buttons {
-	display: flex;
-	justify-content: flex-end;
-	align-items: center;
-	flex-direction: column;
-	height: 100%;
-	padding-bottom: 3em;
-
-	&__model-name {
-		margin-bottom: 7.5em;
-		font-size: 2.5rem;
-		@include modelDetails;
-	}
-
-	&__box {
-		display: flex;
-		flex-wrap: wrap;
-		flex-direction: row;
-		justify-content: space-evenly;
-		align-items: flex-end;
-		width: 100%;
-	}
-
-	&__dimensions,
-	&__instagram {
-		padding: 1em 2em;
-		margin: 0.5em;
-		font-size: 1rem;
-		font-weight: 600;
-		text-transform: uppercase;
-		color: $brown-color;
-		letter-spacing: 0.15em;
-		border: 1px solid transparent;
-		border-radius: 8px;
-		background-color: $white-color;
-
-		&:focus {
-			@include focusBrown;
-		}
-	}
-}
-
 // DIMENSIONS ON MAIN MODEL PAGE
 
 .main-model {
@@ -409,7 +347,7 @@ body {
 
 	&__dimensions-box {
 		@include modelDetails;
-		margin: 8em;
+		margin: 2em 0 3em;
 	}
 
 	&__dimensions {
@@ -429,6 +367,76 @@ body {
 	}
 }
 
+// MAIN PAGE OF MODEL
+
+.model-banner {
+	height: 75vh;
+	width: 100vw;
+	background-size: cover;
+	background-position: center;
+	overflow: hidden;
+}
+
+.julia {
+	background-image: url('../img/julia_mobile.webp');
+}
+
+.grid-container-model {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: auto;
+	gap: 1.2em;
+	margin-top: 6em;
+}
+
+.buttons {
+	display: flex;
+	justify-content: flex-end;
+	align-items: center;
+	flex-direction: column;
+	height: 100%;
+	padding-bottom: 3em;
+
+	&__model-name {
+		margin-bottom: 3.5em;
+		font-size: 2.2rem;
+		@include modelDetails;
+	}
+
+	&__box {
+		display: flex;
+		flex-wrap: wrap;
+		flex-direction: row;
+		justify-content: space-evenly;
+		align-items: flex-end;
+		width: 100%;
+	}
+
+	&__dimensions,
+	&__instagram {
+		padding: 1em 2em;
+		font-size: 1.2rem;
+		font-weight: 600;
+		text-transform: uppercase;
+		text-align: center;
+		color: $brown-color;
+		letter-spacing: 0.2em;
+		border: 1px solid transparent;
+		border-radius: 8px;
+		background-color: $white-color;
+		transition: background-color 0.3s linear;
+
+		&:hover {
+			background-color: #603808;
+			color: $white-color;
+		}
+
+		&:focus {
+			@include focusBrown;
+		}
+	}
+}
+
 // CONTACT PAGE
 
 .contact {
@@ -436,15 +444,24 @@ body {
 	flex-direction: column;
 	justify-content: center;
 	align-items: center;
-	height: 45vh;
-	margin: 4.5em 2em 10.5em;
+	height: 35vh;
+	margin: 4.5em 2em 0;
+
+	&__banner {
+		margin-bottom: 4em;
+		width: 100vw;
+		height: 40vh;
+		background-image: url('../img/mobile-contact-banner.webp');
+		background-size:cover;
+		background-position: top;
+	}
 
 	&__details {
 		display: flex;
 		flex-direction: column;
 		justify-content: center;
 		align-items: center;
-		margin-bottom: 2em;
+		margin-bottom: 1.5em;
 	}
 
 	&__name {
@@ -480,6 +497,45 @@ body {
 
 		&:focus {
 			@include focusBrown;
+		}
+	}
+}
+
+@media (max-width: 320px) {
+	.heading {
+		height: 20%;
+		&__women {
+			font-size: 1.2rem;
+		}
+	}
+	.model-card {
+		&__name {
+			font-size: 1rem;
+		}
+
+		&__dimensions {
+			font-size: 0.8rem;
+		}
+	}
+	.main-model {
+		&__name {
+			margin: 1.5em 0 1em;
+			font-size: 1.5rem;
+		}
+		&__dimensions-box {
+			margin: 0 0 1em;
+			font-size: 1rem;
+		}
+	}
+
+	.buttons {
+		&__model-name {
+			font-size: 2rem;
+		}
+
+		&__dimensions,
+		&__instagram {
+			font-size: 1rem;
 		}
 	}
 }
@@ -562,11 +618,17 @@ body {
 			font-size: 1.4rem;
 			letter-spacing: 0.35em;
 		}
+
+		&__banner {
+			height: 60vh;
+			background-image: url('../img/deskop-contact-banner.webp');
+			background-position: center;
+		}
 	}
 
 	.footer {
 		&__menu-links {
-			font-size: 1.6rem;
+			font-size: 1.4rem;
 		}
 
 		&__copyright {
@@ -579,9 +641,25 @@ body {
 		background-image: url('../img/deskop-banner-2674-1783.webp');
 	}
 
+	.julia {
+		background-image: url('../img/julia_deskop.webp');
+	}
+
 	.main-model {
 		&__box {
 			background-image: url('../img/blured-deskop-banner-2674-1783.webp');
+		}
+	}
+
+	.buttons {
+		&__model-name {
+			font-size: 3rem;
+		}
+
+		&__dimensions,
+		&__instagram {
+			width: 15%;
+			padding: 1em 2em;
 		}
 	}
 }
