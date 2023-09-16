@@ -41,14 +41,8 @@ textarea {
 }
 
 body {
-  font-family: "Raleway", sans-serif;
+  font-family: "Italiana", serif;
   color: #583101;
-}
-
-.wrapper {
-  margin: 0 auto;
-  width: 100%;
-  max-width: 1200px;
 }
 
 .lock-scroll {
@@ -156,7 +150,7 @@ body {
 }
 .nav__close-btn:focus {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #583101;
   border-radius: 5px;
 }
 .nav__box {
@@ -176,32 +170,36 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  margin: 4.5em auto 8.5em;
+  margin: 4.5em auto 4em;
 }
 .nav__link {
   margin: 0.5em;
   padding: 0.75em 1.5em;
   font-size: 1.6rem;
-  color: white;
-  text-transform: uppercase;
+  color: #583101;
+  text-transform: capitalize;
   font-weight: bold;
   line-height: normal;
-  letter-spacing: 8px;
+  letter-spacing: 0.5em;
   border: 1px solid transparent;
+  transition: color 0.3s linear;
+}
+.nav__link:hover {
+  color: #b08968;
 }
 .nav__link:focus {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #583101;
   border-radius: 5px;
 }
 .nav__insta-box {
-  margin: 1.5em auto 3.5em;
+  margin: 1.5em auto 3em;
   padding: 1em;
   cursor: pointer;
 }
 .nav__insta-box:focus {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #583101;
   border-radius: 5px;
 }
 .nav__insta-icon {
@@ -239,18 +237,23 @@ body {
 }
 .footer__menu-box {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
 }
 .footer__menu-links {
-  font-size: 1.2rem;
   margin: 0.75em;
   padding: 0.45em;
-  text-transform: uppercase;
+  font-size: 1.35rem;
+  text-transform: capitalize;
   color: #583101;
+  letter-spacing: 0.2em;
   border: 1px solid transparent;
   cursor: pointer;
+  transition: color 0.3s linear;
+}
+.footer__menu-links:hover {
+  color: #b08968;
 }
 .footer__menu-links:focus {
   outline: none;
@@ -269,8 +272,8 @@ body {
 }
 .heading__women {
   font-size: 1.6rem;
-  text-transform: uppercase;
-  letter-spacing: 4px;
+  text-transform: capitalize;
+  letter-spacing: 0.4em;
   font-weight: 200;
 }
 
@@ -307,11 +310,11 @@ body {
 }
 .model-card__name {
   margin-bottom: 0.3em;
-  font-size: 1.2rem;
-  text-transform: uppercase;
+  font-size: 1.3rem;
+  text-transform: capitalize;
   text-align: center;
   color: #583101;
-  letter-spacing: 0.15em;
+  letter-spacing: 0.2em;
 }
 .model-card__dimensions {
   font-size: 1.2rem;
@@ -347,7 +350,7 @@ body {
 }
 .main-model__close-btn:focus {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #583101;
   border-radius: 5px;
 }
 .main-model__items {
@@ -359,38 +362,35 @@ body {
 }
 .main-model__name {
   margin-bottom: 1.5em;
-  font-size: 1.8rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 1.9rem;
+  color: #583101;
+  text-transform: capitalize;
   text-align: center;
   letter-spacing: 0.3em;
 }
 .main-model__dimensions-box {
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
+  color: #583101;
+  text-transform: capitalize;
   text-align: center;
   letter-spacing: 0.3em;
   margin: 2em 0 3em;
 }
 .main-model__dimensions {
   padding: 1em;
-  font-size: 1.35rem;
+  font-size: 1.4rem;
 }
 .main-model__contact {
   padding: 1em;
-  font-size: 1.35rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-size: 1.4rem;
+  color: #583101;
+  text-transform: capitalize;
   text-align: center;
   letter-spacing: 0.3em;
   border: 1px solid transparent;
 }
 .main-model__contact:focus {
   outline: none;
-  border: 1px solid white;
+  border: 1px solid #583101;
   border-radius: 5px;
 }
 
@@ -416,50 +416,42 @@ body {
 
 .buttons {
   display: flex;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  align-items: flex-start;
   flex-direction: column;
+  width: 100%;
   height: 100%;
-  padding-bottom: 3em;
+  padding: 5em 3em;
 }
 .buttons__model-name {
-  margin-bottom: 3.5em;
-  font-size: 2.2rem;
-  color: white;
-  font-weight: 700;
-  text-transform: uppercase;
-  text-align: center;
-  letter-spacing: 0.3em;
-}
-.buttons__box {
-  display: flex;
-  flex-wrap: wrap;
-  flex-direction: row;
-  justify-content: space-evenly;
-  align-items: flex-end;
-  width: 100%;
+  margin-bottom: 0.25em;
+  font-family: "Italiana", serif;
+  font-size: 5rem;
+  text-transform: capitalize;
+  letter-spacing: 0.05em;
 }
 .buttons__dimensions, .buttons__instagram {
-  padding: 1em 2em;
-  font-size: 1.2rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  text-align: center;
+  padding: 0.1em;
+  font-family: "Italiana", serif;
+  text-transform: capitalize;
   color: #583101;
-  letter-spacing: 0.2em;
-  border: 1px solid transparent;
-  border-radius: 8px;
-  background-color: white;
-  transition: background-color 0.3s linear;
+  font-size: 6rem;
+  background-color: transparent;
+  transition: color 0.3s linear;
 }
 .buttons__dimensions:hover, .buttons__instagram:hover {
-  background-color: #603808;
-  color: white;
+  color: #b08968;
 }
 .buttons__dimensions:focus, .buttons__instagram:focus {
   outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
+  color: #b08968;
+}
+.buttons__dimensions {
+  font-size: 4rem;
+  margin-bottom: 0.1em;
+}
+.buttons__instagram {
+  font-size: 2.75rem;
 }
 
 .contact {
@@ -540,10 +532,50 @@ body {
     font-size: 1rem;
   }
   .buttons__model-name {
+    font-size: 4rem;
+  }
+  .buttons__dimensions {
+    font-size: 3rem;
+    margin-bottom: 0.1em;
+  }
+  .buttons__instagram {
     font-size: 2rem;
   }
-  .buttons__dimensions, .buttons__instagram {
-    font-size: 1rem;
+}
+@media (min-width: 768px) {
+  .nav__link {
+    font-size: 2.75rem;
+  }
+  .heading__women {
+    font-size: 2.25rem;
+  }
+  .model-card__name {
+    font-size: 1.75rem;
+  }
+  .model-card__dimensions {
+    font-size: 1.5rem;
+  }
+  .main-model__name {
+    font-size: 2.6rem;
+  }
+  .main-model__dimensions {
+    padding: 1em;
+    font-size: 2rem;
+  }
+  .main-model__contact {
+    padding: 1em;
+    font-size: 2rem;
+  }
+  .buttons__model-name {
+    margin-bottom: 0.25em;
+    font-size: 6rem;
+    letter-spacing: 0.05em;
+  }
+  .buttons__dimensions {
+    font-size: 5rem;
+  }
+  .buttons__instagram {
+    font-size: 3.75rem;
   }
 }
 @media (min-width: 1024px) {
@@ -624,10 +656,13 @@ body {
     background-image: url("../img/blured-deskop-banner-2674-1783.webp");
   }
   .buttons__model-name {
-    font-size: 3rem;
+    margin-bottom: 0.25em;
+    font-size: 5rem;
+    letter-spacing: 0.05em;
   }
   .buttons__dimensions, .buttons__instagram {
-    width: 15%;
-    padding: 1em 2em;
+    margin-bottom: 0;
+    padding: 0;
+    font-size: 3.5rem;
   }
 }/*# sourceMappingURL=main.css.map */
