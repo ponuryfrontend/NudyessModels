@@ -345,8 +345,8 @@ body {
 	}
 
 	&__name {
-		margin-bottom: 1.5em;
-		font-size: 1.9rem;
+		margin-bottom: 1.6em;
+		font-size: 1.8rem;
 		@include modelDetails;
 	}
 
@@ -357,14 +357,14 @@ body {
 
 	&__dimensions {
 		padding: 1em;
-		font-size: 1.4rem;
+		font-size: 1.6rem;
 	}
 
 	&__contact {
 		padding: 1em;
-		font-size: 1.4rem;
-		@include modelDetails;
+		font-size: 1.6rem;
 		border: 1px solid transparent;
+		@include modelDetails;
 
 		&:focus {
 			@include focusBrown;
