@@ -1,21 +1,7 @@
-@mixin focusWhite {
-	outline: none;
-	border: 1px solid #ffff;
-	border-radius: 5px;
-}
-
 @mixin focusBrown {
 	outline: none;
 	border: 1px solid #583101;
 	border-radius: 5px;
-}
-
-@mixin modelDetails {
-	color: #583101;
-	text-transform: capitalize;
-	text-align: center;
-	letter-spacing: 0.3em;
-	font-weight: bold;
 }
 
 @mixin closeBtn {

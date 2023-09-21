@@ -7,6 +7,12 @@ body {
 	color: $brown-color;
 }
 
+.flex-center {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
 .lock-scroll {
 	overflow: hidden;
 }
@@ -127,9 +133,7 @@ body {
 		justify-content: center;
 		height: 100%;
 		width: 100%;
-		background-image: url('../img/blured-mobile-banner-750-1124.webp');
-		background-size: cover;
-		background-position: center;
+		background-color: rgb(255, 255, 255);
 		overflow: hidden;
 		z-index: 10;
 	}
@@ -147,7 +151,7 @@ body {
 		padding: 0.75em 1.5em;
 		font-size: 1.6rem;
 		color: $brown-color;
-		text-transform: capitalize;
+		text-transform: uppercase;
 		font-weight: bold;
 		line-height: normal;
 		letter-spacing: 0.5em;
@@ -209,18 +213,18 @@ body {
 		}
 	}
 
+	&
+
 	&__menu-box {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+		flex-direction: row;
 	}
 
 	&__menu-links {
 		margin: 0.75em;
 		padding: 0.45em;
-		font-size: 1.35rem;
-		text-transform: capitalize;
+		font-size: 1.4rem;
+		text-transform: uppercase;
+		text-align: center;
 		color: $brown-color;
 		letter-spacing: 0.2em;
 		border: 1px solid transparent;
@@ -238,6 +242,7 @@ body {
 
 	&__copyright {
 		margin: 1.5em 0 3.5em;
+		letter-spacing: 0.1em;
 	}
 }
 
@@ -250,8 +255,8 @@ body {
 	height: 15%;
 
 	&__women {
-		font-size: 1.6rem;
-		text-transform: capitalize;
+		font-size: 1.7rem;
+		text-transform: uppercase;
 		letter-spacing: 0.4em;
 		font-weight: 200;
 	}
@@ -264,7 +269,7 @@ body {
 	grid-template-columns: repeat(2, 1fr);
 	grid-template-rows: auto;
 	gap: 1.2em;
-	margin-top: 6em;
+	margin-top: 3em;
 }
 
 .model-card {
@@ -292,83 +297,12 @@ body {
 	}
 
 	&__name {
-		margin-bottom: 0.3em;
-		font-size: 1.3rem;
-		text-transform: capitalize;
+		margin-top: 0.3em;
+		font-size: 1.45rem;
+		text-transform: uppercase;
 		text-align: center;
 		color: $brown-color;
 		letter-spacing: 0.2em;
-	}
-
-	&__dimensions {
-		font-size: 1.2rem;
-		color: $brown-color;
-	}
-}
-
-// DIMENSIONS ON MAIN MODEL PAGE
-
-.main-model {
-	position: fixed;
-	transform: translateX(-100%);
-	opacity: 0;
-	transition: opacity linear 1s;
-	overflow: hidden;
-
-	&--active {
-		transform: translateX(0);
-		opacity: 1;
-	}
-
-	&__box {
-		height: 100vh;
-		width: 100vw;
-		background-image: url('../img/blured-mobile-banner-750-1124.webp');
-		background-size: cover;
-		background-position: center;
-	}
-
-	&__close-btn {
-		@include closeBtn;
-
-		&:focus {
-			@include focusBrown;
-		}
-	}
-
-	&__items {
-		display: flex;
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
-		height: 100%;
-	}
-
-	&__name {
-		margin-bottom: 1.6em;
-		font-size: 1.8rem;
-		@include modelDetails;
-	}
-
-	&__dimensions-box {
-		@include modelDetails;
-		margin: 2em 0 3em;
-	}
-
-	&__dimensions {
-		padding: 1em;
-		font-size: 1.6rem;
-	}
-
-	&__contact {
-		padding: 1em;
-		font-size: 1.6rem;
-		border: 1px solid transparent;
-		@include modelDetails;
-
-		&:focus {
-			@include focusBrown;
-		}
 	}
 }
 
@@ -376,78 +310,126 @@ body {
 
 .model-banner {
 	height: 75vh;
-	width: 100vw;
-	background-size: cover;
-	background-position: center;
+	width: 100%;
 	overflow: hidden;
+
+	&__julia {
+		height: 100%;
+		background-image: url('../img/julia_women_list.webp');
+		background-size: cover;
+		background-position: center;
+	}
 }
 
-.julia {
-	background-image: url('../img/julia_mobile.webp');
+.dimensions {
+	flex-direction: column;
+	margin-top: 1em;
+
+	&__button {
+		width: 90%;
+		margin: 1.5em 1em;
+		padding: 0.6em 1em;
+		font-size: 1.6rem;
+		color: $brown-color;
+		text-transform: uppercase;
+		letter-spacing: 0.2em;
+		border-top: 1px solid $brown-color;
+		border-bottom: 1px solid $brown-color;
+		background-color: transparent;
+		overflow: hidden;
+
+		&:focus {
+			@include focusBrown;
+		}
+	}
+
+	&__box {
+		display: none;
+		flex-direction: column;
+		width: 90%;
+		margin-top: 2em;
+		transform: translateY(-200%);
+
+		&--active {
+			display: flex;
+			transform: translateY(0%);
+		}
+	}
+
+	&__details {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: center;
+		width: 90%;
+	}
+
+	&__detail {
+		margin-bottom: 1em;
+		font-size: 1.25rem;
+		text-transform: uppercase;
+		letter-spacing: 0.15em;
+	}
+
+	&__instagram {
+		padding: 0.5em 1em;
+		font-size: 1.3rem;
+		color: $brown-color;
+		text-transform: uppercase;
+		letter-spacing: 0.1em;
+		border: 1px solid transparent;
+
+		&:focus {
+			@include focusBrown;
+		}
+	}
 }
 
 .grid-container-model {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(1, 1fr);
 	grid-template-rows: auto;
-	gap: 1.2em;
-	margin-top: 6em;
+	gap: 1.5em;
+	margin: 3em 0;
 }
 
-.buttons {
-	display: flex;
-	justify-content: center;
-	align-items: flex-start;
+.header {
 	flex-direction: column;
-	width: 100%;
-	height: 100%;
-	padding: 5em 3em;
+
+	&__space {
+		height: 13vh;
+	}
+
+	&__box {
+		flex-direction: column;
+	}
 
 	&__model-name {
-		margin-bottom: 0.25em;
-		font-family: 'Italiana', serif;
-		font-size: 5rem;
-		text-transform: capitalize;
-		letter-spacing: 0.05em;
-	}
-
-	&__dimensions,
-	&__instagram {
-		padding: 0.1em;
-		font-family: 'Italiana', serif;
-		text-transform: capitalize;
-		color: $brown-color;
-		font-size: 6rem;
-		background-color: transparent;
-		transition: color 0.3s linear;
-
-		&:hover {
-			color: $light-brown-color;
-		}
-
-		&:focus {
-			outline: none;
-			color: $light-brown-color;
-		}
-	}
-
-	&__dimensions {
-		font-size: 4rem;
-		margin-bottom: 0.1em;
+		margin-bottom: 1em;
+		text-align: center;
+		font-size: 3.5rem;
+		text-transform: uppercase;
+		letter-spacing: 0.12em;
 	}
 
 	&__instagram {
-		font-size: 2.75rem;
+		display: none;
+	}
+
+	&__model-banner {
+		margin-bottom: 1.2em;
+		max-width: 100%;
+	}
+
+	&__model-banner-tablet {
+		display: none;
 	}
 }
 
 // CONTACT PAGE
 
 .contact {
-	display: flex;
 	flex-direction: column;
-	justify-content: center;
-	align-items: center;
 	height: 35vh;
 	margin: 4.5em 2em 0;
 
@@ -461,10 +443,7 @@ body {
 	}
 
 	&__details {
-		display: flex;
 		flex-direction: column;
-		justify-content: center;
-		align-items: center;
 		margin-bottom: 1.5em;
 	}
 
@@ -516,35 +495,6 @@ body {
 		&__name {
 			font-size: 1rem;
 		}
-
-		&__dimensions {
-			font-size: 0.8rem;
-		}
-	}
-	.main-model {
-		&__name {
-			margin: 1.5em 0 1em;
-			font-size: 1.5rem;
-		}
-		&__dimensions-box {
-			margin: 0 0 1em;
-			font-size: 1rem;
-		}
-	}
-
-	.buttons {
-		&__model-name {
-			font-size: 4rem;
-		}
-
-		&__dimensions {
-			font-size: 3rem;
-			margin-bottom: 0.1em;
-		}
-
-		&__instagram {
-			font-size: 2rem;
-		}
 	}
 }
 
@@ -565,42 +515,77 @@ body {
 		&__name {
 			font-size: 1.75rem;
 		}
+	}
 
-		&__dimensions {
-			font-size: 1.5rem;
+	.dimensions {
+		&__button {
+			font-size: 1.8rem;
+		}
+
+		&__detail {
+			font-size: 1.4rem;
+		}
+		&__instagram {
+			display: none;
 		}
 	}
 
-	.main-model {
-		&__name {
-			font-size: 2.6rem;
+	.header {
+		&__space {
+			height: 8vh;
 		}
-	
-		&__dimensions {
-			padding: 1em;
-			font-size: 2rem;
-		}
-	
-		&__contact {
-			padding: 1em;
-			font-size: 2rem;
-		}
-	}
 
-	.buttons {
+		&__box {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			gap: 1.5em;
+			max-width: 1200px;
+			margin-bottom: 3em;
+			overflow: hidden;
+		}
+
+		&__details-box {
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			align-items: center;
+		}
+
 		&__model-name {
-			margin-bottom: 0.25em;
-			font-size: 6rem;
-			letter-spacing: 0.05em;
-		}
-
-		&__dimensions {
+			width: 100%;
+			margin-bottom: 0;
 			font-size: 5rem;
+			letter-spacing: 0.4em;text-align: center;
 		}
 
 		&__instagram {
-			font-size: 3.75rem;
+			display: block;
+			padding: 0.1em 0.2em;
+			width: 100%;
+			font-size: 3.35rem;
+			color: $brown-color;
+			text-transform: uppercase;
+			text-align: center;
+			letter-spacing: 0.15em;
+			border: 1px solid transparent;
+			transition: color 0.3s linear;
+
+			&:hover {
+				color: $light-brown-color;
+			}
+
+			&:focus {
+				@include focusBrown;
+			}
 		}
+
+		&__model-banner {
+			margin-bottom: 0;
+		}
+	}
+
+	.grid-container-model {
+		grid-template-columns: repeat(2, 1fr);
 	}
 }
 
@@ -630,10 +615,6 @@ body {
 	}
 
 	.nav {
-		&__box {
-			background-image: url('../img/blured-deskop-banner-2674-1783.webp');
-		}
-
 		&__link {
 			font-size: 2rem;
 			font-weight: 800;
@@ -653,10 +634,6 @@ body {
 
 		&__name {
 			font-size: 1.55rem;
-		}
-
-		&__dimensions {
-			font-size: 1.5rem;
 		}
 	}
 
@@ -692,7 +669,7 @@ body {
 
 	.footer {
 		&__menu-links {
-			font-size: 1.4rem;
+			font-size: 1.6rem;
 		}
 
 		&__copyright {
@@ -702,31 +679,42 @@ body {
 
 	.model-banner {
 		height: 85vh;
-		background-image: url('../img/deskop-banner-2674-1783.webp');
 	}
 
-	.julia {
-		background-image: url('../img/julia_deskop.webp');
+	.header {
+		&__space {
+			height: 9vh;
+		}
+
+		&__details-box {
+			margin: 0 8em 4em 0;
+			margin-right: 8em;
+		}
 	}
 
-	.main-model {
+	.dimensions {
+		&__button {
+			display: none;
+		}
 		&__box {
-			background-image: url('../img/blured-deskop-banner-2674-1783.webp');
-		}
-	}
-
-	.buttons {
-		&__model-name {
-			margin-bottom: 0.25em;
-			font-size: 5rem;
-			letter-spacing: 0.05em;
+			display: flex;
+			flex-direction: row;
+			margin-top: 3em;
+			width: 78%;
+			transform: translateY(0%);
 		}
 
-		&__dimensions,
-		&__instagram {
-			margin-bottom: 0;
-			padding: 0;
-			font-size: 3.5rem;
+		&__details {
+			flex-direction: row;
+			justify-content: center;
+			align-items: center;
+			gap: 0.5em;
+		}
+
+		&__detail {
+			margin-right: 0.45em;
+			font-size: 1.55rem;
+			font-weight: bold;
 		}
 	}
 }
