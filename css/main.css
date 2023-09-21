@@ -42,6 +42,7 @@ textarea {
 
 body {
   font-family: "Italiana", serif;
+  font-weight: bolder;
   color: #583101;
 }
 
@@ -182,7 +183,6 @@ body {
   font-size: 1.6rem;
   color: #583101;
   text-transform: uppercase;
-  font-weight: bold;
   line-height: normal;
   letter-spacing: 0.5em;
   border: 1px solid transparent;
@@ -277,7 +277,6 @@ body {
   font-size: 1.7rem;
   text-transform: uppercase;
   letter-spacing: 0.4em;
-  font-weight: 200;
 }
 
 .grid-container {
@@ -447,7 +446,6 @@ body {
 .contact__name {
   padding: 1em 1em 0 1em;
   font-size: 1.3rem;
-  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: 0.5em;
 }
@@ -458,7 +456,6 @@ body {
 .contact__phone {
   padding: 0em 1em 0.4em;
   font-size: 1.3rem;
-  font-weight: 300;
   letter-spacing: 0.25em;
 }
 .contact__email {
@@ -576,7 +573,6 @@ body {
   }
   .nav__link {
     font-size: 2rem;
-    font-weight: 800;
   }
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
@@ -648,6 +644,5 @@ body {
   .dimensions__detail {
     margin-right: 0.45em;
     font-size: 1.55rem;
-    font-weight: bold;
   }
 }/*# sourceMappingURL=main.css.map */
