@@ -157,24 +157,25 @@ body {
 		letter-spacing: 0.5em;
 		border: 1px solid transparent;
 		transition: color 0.3s linear;
-
+		
 		&:focus {
 			@include focusBrown;
 		}
 	}
-
+	
 	&__insta-box {
 		margin: 1.5em auto 3em;
-		padding: 1em;
 		cursor: pointer;
+	}
+	
+	&__insta-icon {
+		margin: 0.5em;
+		padding: 1em;
+		border: 1px solid transparent;
 
 		&:focus {
 			@include focusBrown;
 		}
-	}
-
-	&__insta-icon {
-		margin: 0.5em;
 	}
 }
 
@@ -190,12 +191,18 @@ body {
 	overflow: hidden;
 
 	&__insta-box {
-		margin: 2.35em 0 0;
-		padding: 1.5em;
+		margin-top: 2.35em;
+		
+	}
+	
+	&__insta-icon {
+		padding: 1em;
+		border: 1px solid transparent;
 
 		&:focus {
 			@include focusBrown;
 		}
+	
 	}
 
 	&__logo {

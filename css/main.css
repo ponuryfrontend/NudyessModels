@@ -195,16 +195,17 @@ body {
 }
 .nav__insta-box {
   margin: 1.5em auto 3em;
-  padding: 1em;
   cursor: pointer;
-}
-.nav__insta-box:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
 }
 .nav__insta-icon {
   margin: 0.5em;
+  padding: 1em;
+  border: 1px solid transparent;
+}
+.nav__insta-icon:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
 }
 
 .footer {
@@ -217,10 +218,13 @@ body {
   overflow: hidden;
 }
 .footer__insta-box {
-  margin: 2.35em 0 0;
-  padding: 1.5em;
+  margin-top: 2.35em;
 }
-.footer__insta-box:focus {
+.footer__insta-icon {
+  padding: 1em;
+  border: 1px solid transparent;
+}
+.footer__insta-icon:focus {
   outline: none;
   border: 1px solid #583101;
   border-radius: 5px;
