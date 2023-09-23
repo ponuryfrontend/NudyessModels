@@ -3,8 +3,7 @@
 @use './mixins' as *;
 
 body {
-	font-family: 'Italiana', serif;
-	font-weight: bold;
+	font-family: 'Castoro Titling', cursive;
 	color: $brown-color;
 }
 
@@ -151,16 +150,13 @@ body {
 		margin: 0.5em;
 		padding: 0.75em 1.5em;
 		font-size: 1.6rem;
+		font-weight: bold;
 		color: $brown-color;
 		text-transform: uppercase;
 		line-height: normal;
 		letter-spacing: 0.5em;
 		border: 1px solid transparent;
 		transition: color 0.3s linear;
-
-		&:hover {
-			color: $light-brown-color;
-		}
 
 		&:focus {
 			@include focusBrown;
@@ -213,9 +209,7 @@ body {
 		}
 	}
 
-	&
-
-	&__menu-box {
+	& &__menu-box {
 		flex-direction: row;
 	}
 
@@ -231,10 +225,6 @@ body {
 		cursor: pointer;
 		transition: color 0.3s linear;
 
-		&:hover {
-			color: $light-brown-color;
-		}
-
 		&:focus {
 			@include focusBrown;
 		}
@@ -246,15 +236,15 @@ body {
 	}
 }
 
-// HEADING MODELS LIST
+// HEADING 
 
 .heading {
 	display: flex;
 	justify-content: center;
 	align-items: flex-end;
-	height: 15%;
+	height: 17%;
 
-	&__women {
+	&__main {
 		font-size: 1.7rem;
 		text-transform: uppercase;
 		letter-spacing: 0.4em;
@@ -311,13 +301,6 @@ body {
 	height: 75vh;
 	width: 100%;
 	overflow: hidden;
-
-	&__julia {
-		height: 100%;
-		background-image: url('../img/julia_women_list.webp');
-		background-size: cover;
-		background-position: center;
-	}
 }
 
 .dimensions {
@@ -329,6 +312,7 @@ body {
 		margin: 1.5em 1em;
 		padding: 0.6em 1em;
 		font-size: 1.6rem;
+		font-weight: bold;
 		color: $brown-color;
 		text-transform: uppercase;
 		letter-spacing: 0.2em;
@@ -429,16 +413,13 @@ body {
 
 .contact {
 	flex-direction: column;
-	height: 35vh;
-	margin: 4.5em 2em 0;
+	margin: 4.5em 2em 4.5em;
 
 	&__banner {
-		margin-bottom: 4em;
-		width: 100vw;
-		height: 40vh;
-		background-image: url('../img/mobile-contact-banner.webp');
-		background-size: cover;
-		background-position: top;
+		height: auto;
+		width: 100%;
+		margin-bottom: 3em;
+		border-radius: 8px;
 	}
 
 	&__details {
@@ -459,14 +440,25 @@ body {
 	}
 
 	&__phone {
-		padding: 0em 1em 0.4em;
+		margin: 0em 1em 0.4em;
 		font-size: 1.3rem;
 		letter-spacing: 0.25em;
 	}
 
 	&__email {
-		padding-top: 0.5em;
+		margin-top: 0.5em;
 		letter-spacing: 0.35em;
+	}
+
+	&__phone,
+	&__email {
+		padding: 0.2em 0.4em;
+		color: $brown-color;
+		border: 1px solid transparent;
+
+		&:focus {
+			@include focusBrown;
+		}
 	}
 
 	&__insta {
@@ -484,7 +476,7 @@ body {
 @media (max-width: 320px) {
 	.heading {
 		height: 20%;
-		&__women {
+		&__main {
 			font-size: 1.2rem;
 		}
 	}
@@ -503,7 +495,7 @@ body {
 	}
 
 	.heading {
-		&__women {
+		&__main {
 			font-size: 2.25rem;
 		}
 	}
@@ -552,7 +544,8 @@ body {
 			width: 100%;
 			margin-bottom: 0;
 			font-size: 5rem;
-			letter-spacing: 0.4em;text-align: center;
+			letter-spacing: 0.4em;
+			text-align: center;
 		}
 
 		&__instagram {
@@ -566,10 +559,6 @@ body {
 			letter-spacing: 0.15em;
 			border: 1px solid transparent;
 			transition: color 0.3s linear;
-
-			&:hover {
-				color: $light-brown-color;
-			}
 
 			&:focus {
 				@include focusBrown;
@@ -614,6 +603,10 @@ body {
 	.nav {
 		&__link {
 			font-size: 2rem;
+
+			&:hover {
+				color: $light-brown-color;
+			}
 		}
 	}
 
@@ -634,7 +627,7 @@ body {
 	}
 
 	.contact {
-		height: 55vh;
+		height: 100%;
 
 		&__name {
 			font-size: 1.5rem;
@@ -656,16 +649,20 @@ body {
 			letter-spacing: 0.35em;
 		}
 
-		&__banner {
-			height: 60vh;
-			background-image: url('../img/deskop-contact-banner.webp');
-			background-position: center;
+		&__phone, &__email {
+			&:hover {
+				color: $light-brown-color;
+			}
 		}
 	}
 
 	.footer {
 		&__menu-links {
 			font-size: 1.6rem;
+
+			&:hover {
+				color: $light-brown-color;
+			}
 		}
 
 		&__copyright {
@@ -685,6 +682,12 @@ body {
 		&__details-box {
 			margin: 0 8em 4em 0;
 			margin-right: 8em;
+		}
+
+		&__instagram {
+			&:hover {
+				color: $light-brown-color;
+			}
 		}
 	}
 

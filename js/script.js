@@ -9,9 +9,9 @@ const footerYear = document.querySelector('.footer__year')
 const whiteningHeader = () => {
 	const scrollListener = window.scrollY
 
-	if (scrollListener >= 80) {
+	if (scrollListener >= 70) {
 		fixedHeader.classList.add('white-background')
-	} else if (scrollListener < 80) {
+	} else if (scrollListener < 70) {
 		fixedHeader.classList.remove('white-background')
 	}
 }

@@ -41,8 +41,7 @@ textarea {
 }
 
 body {
-  font-family: "Italiana", serif;
-  font-weight: bold;
+  font-family: "Castoro Titling", cursive;
   color: #583101;
 }
 
@@ -181,15 +180,13 @@ body {
   margin: 0.5em;
   padding: 0.75em 1.5em;
   font-size: 1.6rem;
+  font-weight: bold;
   color: #583101;
   text-transform: uppercase;
   line-height: normal;
   letter-spacing: 0.5em;
   border: 1px solid transparent;
   transition: color 0.3s linear;
-}
-.nav__link:hover {
-  color: #b08968;
 }
 .nav__link:focus {
   outline: none;
@@ -254,9 +251,6 @@ body {
   cursor: pointer;
   transition: color 0.3s linear;
 }
-.footer__menu-links:hover {
-  color: #b08968;
-}
 .footer__menu-links:focus {
   outline: none;
   border: 1px solid #583101;
@@ -271,9 +265,9 @@ body {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  height: 15%;
+  height: 17%;
 }
-.heading__women {
+.heading__main {
   font-size: 1.7rem;
   text-transform: uppercase;
   letter-spacing: 0.4em;
@@ -324,12 +318,6 @@ body {
   width: 100%;
   overflow: hidden;
 }
-.model-banner__julia {
-  height: 100%;
-  background-image: url("../img/julia_women_list.webp");
-  background-size: cover;
-  background-position: center;
-}
 
 .dimensions {
   flex-direction: column;
@@ -340,6 +328,7 @@ body {
   margin: 1.5em 1em;
   padding: 0.6em 1em;
   font-size: 1.6rem;
+  font-weight: bold;
   color: #583101;
   text-transform: uppercase;
   letter-spacing: 0.2em;
@@ -428,16 +417,13 @@ body {
 
 .contact {
   flex-direction: column;
-  height: 35vh;
-  margin: 4.5em 2em 0;
+  margin: 4.5em 2em 4.5em;
 }
 .contact__banner {
-  margin-bottom: 4em;
-  width: 100vw;
-  height: 40vh;
-  background-image: url("../img/mobile-contact-banner.webp");
-  background-size: cover;
-  background-position: top;
+  height: auto;
+  width: 100%;
+  margin-bottom: 3em;
+  border-radius: 8px;
 }
 .contact__details {
   flex-direction: column;
@@ -454,13 +440,23 @@ body {
   letter-spacing: 0.25em;
 }
 .contact__phone {
-  padding: 0em 1em 0.4em;
+  margin: 0em 1em 0.4em;
   font-size: 1.3rem;
   letter-spacing: 0.25em;
 }
 .contact__email {
-  padding-top: 0.5em;
+  margin-top: 0.5em;
   letter-spacing: 0.35em;
+}
+.contact__phone, .contact__email {
+  padding: 0.2em 0.4em;
+  color: #583101;
+  border: 1px solid transparent;
+}
+.contact__phone:focus, .contact__email:focus {
+  outline: none;
+  border: 1px solid #583101;
+  border-radius: 5px;
 }
 .contact__insta {
   margin-top: 3.5em;
@@ -478,7 +474,7 @@ body {
   .heading {
     height: 20%;
   }
-  .heading__women {
+  .heading__main {
     font-size: 1.2rem;
   }
   .model-card__name {
@@ -489,7 +485,7 @@ body {
   .nav__link {
     font-size: 2.75rem;
   }
-  .heading__women {
+  .heading__main {
     font-size: 2.25rem;
   }
   .model-card__name {
@@ -540,9 +536,6 @@ body {
     border: 1px solid transparent;
     transition: color 0.3s linear;
   }
-  .header__instagram:hover {
-    color: #b08968;
-  }
   .header__instagram:focus {
     outline: none;
     border: 1px solid #583101;
@@ -574,6 +567,9 @@ body {
   .nav__link {
     font-size: 2rem;
   }
+  .nav__link:hover {
+    color: #b08968;
+  }
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5em;
@@ -586,7 +582,7 @@ body {
     font-size: 1.55rem;
   }
   .contact {
-    height: 55vh;
+    height: 100%;
   }
   .contact__name {
     font-size: 1.5rem;
@@ -604,13 +600,14 @@ body {
     font-size: 1.4rem;
     letter-spacing: 0.35em;
   }
-  .contact__banner {
-    height: 60vh;
-    background-image: url("../img/deskop-contact-banner.webp");
-    background-position: center;
+  .contact__phone:hover, .contact__email:hover {
+    color: #b08968;
   }
   .footer__menu-links {
     font-size: 1.6rem;
+  }
+  .footer__menu-links:hover {
+    color: #b08968;
   }
   .footer__copyright {
     font-size: 1.3rem;
@@ -624,6 +621,9 @@ body {
   .header__details-box {
     margin: 0 8em 4em 0;
     margin-right: 8em;
+  }
+  .header__instagram:hover {
+    color: #b08968;
   }
   .dimensions__button {
     display: none;
