@@ -513,6 +513,7 @@ body {
 }
 .application__apply-btn, .application__clear-btn, .application__close-btn, .application__upload-label {
   font-size: 1.2rem;
+  font-weight: 400;
   color: #583101;
   letter-spacing: 0.05em;
   background-color: transparent;
