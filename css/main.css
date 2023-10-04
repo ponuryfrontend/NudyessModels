@@ -40,6 +40,16 @@ textarea {
   resize: vertical;
 }
 
+::-moz-placeholder {
+  color: #583101;
+  letter-spacing: 0.05em;
+}
+
+::placeholder {
+  color: #583101;
+  letter-spacing: 0.05em;
+}
+
 body {
   font-family: "Castoro Titling", cursive;
   color: #583101;
@@ -84,11 +94,6 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
 }
-.logo:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
-}
 
 .burger-btn {
   position: absolute;
@@ -98,11 +103,6 @@ body {
   padding: 1.4em;
   background-color: transparent;
   border: 1px solid transparent;
-}
-.burger-btn:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
 }
 .burger-btn__box {
   position: relative;
@@ -154,11 +154,6 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
 }
-.nav__close-btn:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
-}
 .nav__box {
   display: flex;
   flex-direction: column;
@@ -188,11 +183,6 @@ body {
   border: 1px solid transparent;
   transition: color 0.3s linear;
 }
-.nav__link:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
-}
 .nav__insta-box {
   margin: 1.5em auto 3em;
   cursor: pointer;
@@ -201,11 +191,6 @@ body {
   margin: 0.5em;
   padding: 1em;
   border: 1px solid transparent;
-}
-.nav__insta-icon:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
 }
 
 .footer {
@@ -224,23 +209,13 @@ body {
   padding: 1em;
   border: 1px solid transparent;
 }
-.footer__insta-icon:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
-}
 .footer__logo {
   margin: 0.6em 0.6em 3.5em;
   padding: 0.75em 1em;
   border: 1px solid transparent;
   cursor: pointer;
 }
-.footer__logo:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
-}
-.footer .footer__menu-box {
+.footer__menu-box {
   flex-direction: row;
 }
 .footer__menu-links {
@@ -254,11 +229,6 @@ body {
   border: 1px solid transparent;
   cursor: pointer;
   transition: color 0.3s linear;
-}
-.footer__menu-links:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
 }
 .footer__copyright {
   margin: 1.5em 0 3.5em;
@@ -291,11 +261,6 @@ body {
   justify-content: center;
   align-items: center;
   border: 1px solid transparent;
-}
-.model-card:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
 }
 .model-card__img {
   width: 100%;
@@ -343,7 +308,8 @@ body {
 }
 .dimensions__button:focus {
   outline: none;
-  border: 1px solid #583101;
+  color: #b08968;
+  border: 1px solid #b08968;
   border-radius: 5px;
 }
 .dimensions__box {
@@ -377,11 +343,6 @@ body {
   text-transform: uppercase;
   letter-spacing: 0.1em;
   border: 1px solid transparent;
-}
-.dimensions__instagram:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
 }
 
 .grid-container-model {
@@ -457,24 +418,139 @@ body {
   color: #583101;
   border: 1px solid transparent;
 }
-.contact__phone:focus, .contact__email:focus {
-  outline: none;
-  border: 1px solid #583101;
-  border-radius: 5px;
-}
 .contact__insta {
   margin-top: 3.5em;
   padding: 0.5em;
   border: 1px solid transparent;
   cursor: pointer;
 }
-.contact__insta:focus {
-  outline: none;
+
+.application {
+  margin: 5em 3em;
+}
+.application__info, .application__form-container, .application__input-box, .application__pop-up {
+  flex-direction: column;
+}
+.application__h2 {
+  margin-top: 1.25em;
+}
+.application__h2, .application__text {
+  margin-bottom: 2em;
+  text-align: justify;
+}
+.application__h2, .application__label {
+  letter-spacing: 0.15em;
+}
+.application__form, .application__input {
+  width: 100%;
+}
+.application__input-box.error input {
+  background-color: rgba(235, 137, 137, 0.5137254902);
+}
+.application__label {
+  margin-bottom: 1.1em;
+  font-size: 1.35rem;
+}
+.application__input {
+  padding: 1.8em;
+  font-size: 1rem;
+  font-weight: bold;
+  color: #583101;
+  text-align: center;
   border: 1px solid #583101;
-  border-radius: 5px;
+}
+.application__error-text {
+  visibility: hidden;
+  margin: 0.85em 0;
+  font-size: 1.1rem;
+  color: #d84c4c;
+}
+.application__input-box.error .application__error-text {
+  visibility: visible;
+}
+.application__text, .application__photo-instruction {
+  margin-bottom: 1.5em;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+}
+.application__privacy {
+  margin-top: 3em;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+}
+.application__upload-label {
+  margin: 1em 0 2em;
+  width: 100%;
+  font-size: 1.35rem;
+  cursor: pointer;
+}
+.application__upload-file {
+  display: none;
+}
+.application__custom-text, .application__error-text, .application__upload-label {
+  text-align: center;
+}
+.application__photo-instruction, .application__privacy {
+  text-align: justify;
+}
+.application__custom-text {
+  margin-bottom: 0.75em;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+}
+.application__btn-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 1em;
+}
+.application__apply-btn, .application__clear-btn, .application__close-btn, .application__upload-label {
+  font-size: 1.2rem;
+  color: #583101;
+  letter-spacing: 0.05em;
+  background-color: transparent;
+  border: 1px solid #583101;
+}
+.application__apply-btn {
+  padding: 1em 4em;
+}
+.application__clear-btn, .application__upload-label {
+  padding: 1em 3em;
+}
+.application__close-btn {
+  padding: 1em 3em;
+}
+.application__pop-up {
+  position: fixed;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  background-color: white;
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: opacity linear 1s;
+  overflow: hidden;
+  z-index: 10;
+}
+.application__pop-up--active {
+  transform: translateX(0);
+  opacity: 1;
+}
+.application__pop-up-text {
+  margin: 1em 2em;
+  font-size: 1.35rem;
+  text-align: center;
+}
+.application__close-btn {
+  margin: 1em 0 2em;
 }
 
 @media (max-width: 320px) {
+  .nav__link {
+    font-size: 1.4rem;
+    text-align: center;
+  }
   .heading {
     height: 20%;
   }
@@ -484,10 +560,28 @@ body {
   .model-card__name {
     font-size: 1rem;
   }
+  .application__h2, .application__label {
+    font-size: 1.2rem;
+  }
+  .application__input {
+    font-size: 0.8rem;
+  }
+  .application__apply-btn {
+    padding: 1em 3.5em;
+  }
+  .application__clear-btn {
+    padding: 1em 2em;
+  }
 }
 @media (min-width: 768px) {
+  ::-moz-placeholder {
+    font-size: 1.15rem;
+  }
+  ::placeholder {
+    font-size: 1.15rem;
+  }
   .nav__link {
-    font-size: 2.75rem;
+    font-size: 1.8rem;
   }
   .heading__main {
     font-size: 2.25rem;
@@ -542,7 +636,8 @@ body {
   }
   .header__instagram:focus {
     outline: none;
-    border: 1px solid #583101;
+    color: #b08968;
+    border: 1px solid #b08968;
     border-radius: 5px;
   }
   .header__model-banner {
@@ -550,6 +645,21 @@ body {
   }
   .grid-container-model {
     grid-template-columns: repeat(2, 1fr);
+  }
+  .application {
+    max-width: 500px;
+  }
+  .application__h2 {
+    font-size: 1.8rem;
+  }
+  .application__text, .application__photo-instruction, .application__custom-text, .application__privacy {
+    font-size: 1.3rem;
+  }
+  .application__label, .application__apply-btn, .application__clear-btn, .application__close-btn, .application__upload-label {
+    font-size: 1.5rem;
+  }
+  .application__btn-box {
+    justify-content: space-evenly;
   }
 }
 @media (min-width: 1024px) {
@@ -561,6 +671,24 @@ body {
   .main-banner {
     background-image: url("../img/deskop-banner-2674-1783.webp");
   }
+  .logo {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .logo:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .burger-btn {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .burger-btn:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
   .burger-btn:hover .burger-btn__bars::after,
   .burger-btn:hover .burger-btn__bars::before {
     width: 100%;
@@ -568,16 +696,65 @@ body {
   .burger-btn__bars::before {
     transition-delay: 0.15s;
   }
+  .nav__close-btn {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .nav__close-btn:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
   .nav__link {
     font-size: 2rem;
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
   }
   .nav__link:hover {
     color: #b08968;
+  }
+  .nav__link:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .nav__insta-icon:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__insta-icon:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__logo:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .footer__menu-links:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
   }
   .grid-container {
     grid-template-columns: repeat(4, 1fr);
     gap: 1.5em;
     margin-top: 6em;
+  }
+  .model-card {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .model-card:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
   }
   .model-card__box {
     margin: 1em;
@@ -606,6 +783,15 @@ body {
   }
   .contact__phone:hover, .contact__email:hover {
     color: #b08968;
+  }
+  .contact__phone, .contact__email, .contact__insta {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .contact__phone:focus, .contact__email:focus, .contact__insta:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
   }
   .footer__menu-links {
     font-size: 1.6rem;
@@ -648,5 +834,38 @@ body {
   .dimensions__detail {
     margin-right: 0.45em;
     font-size: 1.55rem;
+  }
+  .dimensions__instagram {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .dimensions__instagram:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .application {
+    max-width: 650px;
+  }
+  .application__input {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+  }
+  .application__input:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
+  }
+  .application__clear-btn, .application__apply-btn, .application__upload-label {
+    transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
+    transition: box-shadow 0.3s linear;
+  }
+  .application__clear-btn:focus, .application__apply-btn:focus, .application__upload-label:focus {
+    outline: none;
+    background-color: transparent;
+    box-shadow: 4px 4px 6px rgb(115, 104, 97);
+  }
+  .application__clear-btn:hover, .application__apply-btn:hover, .application__upload-label:hover {
+    box-shadow: 4px 4px 6px rgb(161, 150, 142);
   }
 }/*# sourceMappingURL=main.css.map */

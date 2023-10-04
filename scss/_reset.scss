@@ -39,3 +39,8 @@ button {
 textarea {
 	resize: vertical;
 }
+
+::placeholder {
+	color: #583101;
+	letter-spacing: 0.05em;
+}

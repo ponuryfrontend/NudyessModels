@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kontakt - Contact - Nudyess Models</title>
+    <title>Fill in the submit and become a photo model with us</title>
     <meta name="description" content="........">
     <meta name="keywords"
         content="kontakt, napisz do nas, agencja modelek, zostań modelką, spełnij marzenia, nudyess models, warszawa, polska, modelka">
@@ -28,7 +28,7 @@
                 <a class="nav__link" href="./women.html">women</a>
                 <a class="nav__link" href="./about-us.html">about us</a>
                 <a class="nav__link" href="./media.html">media</a>
-                <a class="nav__link" href="./casting.html">casting</a>
+                <a class="nav__link" href="./casting.html">become a model</a>
                 <a class="nav__link" href="./contact.html">contact</a>
             </div>
             <div class="nav__insta-box flex-center">
@@ -66,13 +66,101 @@
     </div>
 
     <header class="heading">
-        <h1 class="heading__main">casting</h1>
+        <h1 class="heading__main">become a model</h1>
     </header>
 
     <main>
         <section>
-            <div class="wrapper">
-                
+            <div class="wrapper flex-center">
+                <div class="application ">
+                    <div class="application__info flex-center">
+                        <h2 class="application__h2">take your lifetime chance</h2>
+                        <p class="application__text">Ready to make a mark at Nudyess Models? Take the first step and let
+                            us discover you. Showcase your beauty and unique personality. It's your time to shine.
+                            Please fill in the application form below and don't forget to attach your photos.</p>
+                    </div>
+                    <div class="application__form-container flex-center">
+                        <h2 class="application__h2">send us your submit:</h2>
+                        <form action="mail.php" method="post" class="application__form">
+                            <div class="application__input-box flex-center">
+                                <label for="name" class="application__label">First name: </label>
+                                <input type="text" id="name" class="application__input" name="name"
+                                    placeholder="Enter your first name" autocomplete="given-name">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <label for="email" class="application__label">Email:</label>
+                                <input type="email" id="email" name="email" class="application__input"
+                                    placeholder="Enter your email"
+                                    autocomplete="email">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <label for="phone" class="application__label">Phone:</label>
+                                <input type="tel" id="phone" class="application__input" name="phone"
+                                    placeholder="Enter your phone number" autocomplete="tel">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <label for="age" class="application__label">Age:</label>
+                                <input type="number" id="age" class="application__input" name="age"
+                                    placeholder="Enter your age" autocomplete="off">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <label for="height" class="application__label">Height:</label>
+                                <input type="number" id="height" class="application__input" name="height"
+                                    placeholder="Enter your height (in x.xx M)" autocomplete="off">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <label for="city" class="application__label">City:</label>
+                                <input type="text" id="city" class="application__input" name="city"
+                                    placeholder="Enter your city" autocomplete="off">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <label for="instagram" class="application__label">Instagram:</label>
+                                <input type="text" id="instagram" class="application__input" name="instagram"
+                                    placeholder="Enter Instagram ID" autocomplete="off">
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__input-box flex-center">
+                                <p class="application__photo-instruction">For the polaroids or snaps, please take your
+                                    photos in daylight with your hair initially down, then pulled back in a ponytail or
+                                    behind your ears.</p>
+                                <p class="application__photo-instruction">We need to clearly see all facial features.
+                                </p>
+                                <p class="application__photo-instruction">Include one photo facing the camera directly (CLOSE-UP),
+                                    one from a slightly angled side (PROFILE), one photo facing the camera slightly catching hips and waist (WAIST-UP) and one full-length photo in high heels to showcase
+                                    your height and body composition (FULL LENGTH). All photos should be make up free and should be less than 3mb.</p>
+                                <label for="file" class="application__upload-label" accept="image/*" multiple="multiple"
+                                    placeholder="Select at least 3 photos.">select photos</label>
+                                <input type="file" id="file" class="application__upload-file" accept="image/*"
+                                    multiple="multiple" placeholder="Select at least 3 photos.">
+                                <p class="application__custom-text">Important: Hold Ctrl or Cmd to select multiple
+                                    files. Follow the instructions above.</p>
+                                <p class="application__error-text">error</p>
+                            </div>
+                            <div class="application__btn-box">
+                                <button class="application__clear-btn" name="clear" id="clear">clear all</button>
+                                <button class="application__apply-btn" type="submit" name="submit"
+                                    id="submit">submit</button>
+                            </div>
+                            <p class="application__privacy">Your data will be stored and used exclusively for internal
+                                agency purposes and for the implementation of the services offered. You can revoke this
+                                at any time by sending an e-mail to dataprotection@nudyess.com or by telephone.
+                                Likewise, the data will not be passed on to unauthorized third parties, unless we are
+                                legally obliged to do so. For detailed data protection information, please click on our
+                                data protection link in the footer!</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="application__pop-up flex-center">
+                <p class="application__pop-up-text">Your application has been sent! We'll contact you as soon as it
+                    possible. Thank You!</p>
+                <button class="application__close-btn">Close</button>
             </div>
         </section>
     </main>
@@ -113,7 +201,7 @@
             </p>
         </div>
     </footer>
-    <script src="./js/script.js"></script>
+    <script src="./js/casting.js"></script>
 </body>
 
 </html>

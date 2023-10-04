@@ -1,7 +1,12 @@
 @mixin focusBrown {
 	outline: none;
-	border: 1px solid #583101;
+	color: #b08968;
+	border: 1px solid #b08968;
 	border-radius: 5px;
+}
+
+@mixin focusTransition {
+	transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
 }
 
 @mixin closeBtn {
