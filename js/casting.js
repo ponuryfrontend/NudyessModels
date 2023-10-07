@@ -126,11 +126,11 @@ const checkHeight = () => {
 	const height = parseFloat(heightInput.value)
 
 	if (isNaN(height)) {
-		showApplicationError(heightInput, 'Please enter a valid height (for example 1.60 m)')
-	} else if (height < 1.6) {
-		showApplicationError(heightInput, 'The height must be at least 1.60 m.')
-	} else if (height >= 2.0) {
-		showApplicationError(heightInput, 'The height cannot exceed 2.00 m.')
+		showApplicationError(heightInput, 'Please enter a valid height (for example 165 cm)')
+	} else if (height < 160) {
+		showApplicationError(heightInput, 'The height must be at least 160 cm.')
+	} else if (height >= 201) {
+		showApplicationError(heightInput, 'The height cannot exceed 200 cm.')
 	} else {
 		clearApplicationError(heightInput)
 	}

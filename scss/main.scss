@@ -25,7 +25,7 @@ body {
 .main-banner {
 	height: 100vh;
 	width: 100vw;
-	background-image: url('../img/mobile-banner-750-1124.webp');
+	background-image: url('../img/banner-nudyess-models-mobile.webp');
 	background-size: cover;
 	background-position: center;
 	overflow: hidden;
@@ -139,7 +139,6 @@ body {
 		padding: 0.75em 1.5em;
 		font-size: 1.6rem;
 		color: $brown-color;
-		text-transform: uppercase;
 		line-height: normal;
 		letter-spacing: 0.5em;
 		border: 1px solid transparent;
@@ -193,7 +192,6 @@ body {
 		margin: 0.75em;
 		padding: 0.45em;
 		font-size: 1.4rem;
-		text-transform: uppercase;
 		text-align: center;
 		color: $brown-color;
 		letter-spacing: 0.2em;
@@ -218,7 +216,6 @@ body {
 
 	&__main {
 		font-size: 1.7rem;
-		text-transform: uppercase;
 		letter-spacing: 0.4em;
 	}
 }
@@ -242,7 +239,12 @@ body {
 
 	&__img {
 		width: 100%;
-		cursor: pointer;
+		max-width: 100%;
+		height: auto;
+
+		&--deskop {
+			display: none;
+		}
 	}
 
 	&__box {
@@ -256,7 +258,6 @@ body {
 	&__name {
 		margin-top: 0.3em;
 		font-size: 1.45rem;
-		text-transform: uppercase;
 		text-align: center;
 		color: $brown-color;
 		letter-spacing: 0.2em;
@@ -281,7 +282,6 @@ body {
 		padding: 0.6em 1em;
 		font-size: 1.6rem;
 		color: $brown-color;
-		text-transform: uppercase;
 		letter-spacing: 0.2em;
 		border-top: 1px solid $brown-color;
 		border-bottom: 1px solid $brown-color;
@@ -317,7 +317,6 @@ body {
 	&__detail {
 		margin-bottom: 1em;
 		font-size: 1.25rem;
-		text-transform: uppercase;
 		letter-spacing: 0.15em;
 	}
 
@@ -325,7 +324,6 @@ body {
 		padding: 0.5em 1em;
 		font-size: 1.3rem;
 		color: $brown-color;
-		text-transform: uppercase;
 		letter-spacing: 0.1em;
 		border: 1px solid transparent;
 	}
@@ -354,7 +352,6 @@ body {
 		margin-bottom: 1em;
 		text-align: center;
 		font-size: 3.5rem;
-		text-transform: uppercase;
 		letter-spacing: 0.12em;
 	}
 
@@ -365,10 +362,10 @@ body {
 	&__model-banner {
 		margin-bottom: 1.2em;
 		max-width: 100%;
-	}
 
-	&__model-banner-tablet {
-		display: none;
+		&--deskop {
+			display: none;
+		}
 	}
 }
 
@@ -393,7 +390,6 @@ body {
 	&__name {
 		padding: 1em 1em 0 1em;
 		font-size: 1.3rem;
-		text-transform: uppercase;
 		letter-spacing: 0.5em;
 	}
 
@@ -511,7 +507,8 @@ body {
 	}
 
 	&__custom-text,
-	&__error-text, &__upload-label {
+	&__error-text,
+	&__upload-label {
 		text-align: center;
 	}
 
@@ -586,6 +583,26 @@ body {
 	}
 }
 
+.about {
+	flex-direction: column;
+	max-width: 550px;
+	margin: 6em 3.5em 2em;
+
+	&__text {
+		margin-bottom: 1em;
+		padding: 1em 0;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+		text-align: justify;
+	}
+
+	&__h2-text {
+		padding: 1em 0.5em;
+		letter-spacing: 0.2em;
+		color: $brown-color;
+	}
+}
+
 @media (max-width: 320px) {
 	.nav {
 		&__link {
@@ -625,6 +642,12 @@ body {
 	}
 }
 
+@media (min-width: 621px) {
+	.about {
+		margin: 6em auto 2em;
+	}
+}
+
 @media (min-width: 768px) {
 	::placeholder {
 		font-size: 1.15rem;
@@ -636,6 +659,10 @@ body {
 		}
 	}
 
+	.main-banner {
+		background-image: url('../img/banner-nudyess-models-deskop.webp');
+	}
+
 	.heading {
 		&__main {
 			font-size: 2.25rem;
@@ -645,6 +672,16 @@ body {
 	.model-card {
 		&__name {
 			font-size: 1.75rem;
+		}
+
+		&__img {
+			&--deskop {
+				display: block;
+			}
+
+			&--mobile {
+				display: none;
+			}
 		}
 	}
 
@@ -696,7 +733,6 @@ body {
 			width: 100%;
 			font-size: 3.35rem;
 			color: $brown-color;
-			text-transform: uppercase;
 			text-align: center;
 			letter-spacing: 0.15em;
 			border: 1px solid transparent;
@@ -709,6 +745,14 @@ body {
 
 		&__model-banner {
 			margin-bottom: 0;
+
+			&--deskop {
+				display: block;
+			}
+
+			&--mobile {
+				display: none;
+			}
 		}
 	}
 
@@ -732,12 +776,24 @@ body {
 		&__label,
 		&__apply-btn,
 		&__clear-btn,
-		&__close-btn, &__upload-label {
+		&__close-btn,
+		&__upload-label {
 			font-size: 1.5rem;
 		}
 
 		&__btn-box {
 			justify-content: space-evenly;
+		}
+	}
+
+	.about {
+		&__text {
+			margin-bottom: 4em;
+			font-size: 1.3rem;
+		}
+
+		&__h2-text {
+			font-size: 1.6rem;
 		}
 	}
 }
@@ -747,10 +803,6 @@ body {
 		margin: 0 auto;
 		width: 100%;
 		max-width: 1200px;
-	}
-
-	.main-banner {
-		background-image: url('../img/deskop-banner-2674-1783.webp');
 	}
 
 	.logo {
@@ -970,7 +1022,9 @@ body {
 		}
 
 		&__clear-btn,
-		&__apply-btn, &__upload-label {
+		&__apply-btn,
+		&__upload-label,
+		&__close-btn {
 			@include focusTransition;
 			transition: box-shadow 0.3s linear;
 			&:focus {
@@ -981,6 +1035,21 @@ body {
 
 			&:hover {
 				box-shadow: 4px 4px 6px rgb(161, 150, 142);
+			}
+		}
+	}
+
+	.about {
+		&__h2-text {
+			border: 1px solid transparent;
+			transition: color 0.3s linear;
+
+			&:hover {
+				color: $light-brown-color;
+			}
+
+			&:focus {
+				@include focusBrown;
 			}
 		}
 	}

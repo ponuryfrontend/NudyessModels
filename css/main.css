@@ -13,6 +13,7 @@ body {
 
 html {
   font-size: 62.5%;
+  text-transform: uppercase;
   scroll-behavior: smooth;
 }
 
@@ -82,7 +83,7 @@ body {
 .main-banner {
   height: 100vh;
   width: 100vw;
-  background-image: url("../img/mobile-banner-750-1124.webp");
+  background-image: url("../img/banner-nudyess-models-mobile.webp");
   background-size: cover;
   background-position: center;
   overflow: hidden;
@@ -185,7 +186,6 @@ body {
   padding: 0.75em 1.5em;
   font-size: 1.6rem;
   color: #583101;
-  text-transform: uppercase;
   line-height: normal;
   letter-spacing: 0.5em;
   border: 1px solid transparent;
@@ -230,7 +230,6 @@ body {
   margin: 0.75em;
   padding: 0.45em;
   font-size: 1.4rem;
-  text-transform: uppercase;
   text-align: center;
   color: #583101;
   letter-spacing: 0.2em;
@@ -251,7 +250,6 @@ body {
 }
 .heading__main {
   font-size: 1.7rem;
-  text-transform: uppercase;
   letter-spacing: 0.4em;
 }
 
@@ -272,7 +270,11 @@ body {
 }
 .model-card__img {
   width: 100%;
-  cursor: pointer;
+  max-width: 100%;
+  height: auto;
+}
+.model-card__img--deskop {
+  display: none;
 }
 .model-card__box {
   display: flex;
@@ -284,7 +286,6 @@ body {
 .model-card__name {
   margin-top: 0.3em;
   font-size: 1.45rem;
-  text-transform: uppercase;
   text-align: center;
   color: #583101;
   letter-spacing: 0.2em;
@@ -306,7 +307,6 @@ body {
   padding: 0.6em 1em;
   font-size: 1.6rem;
   color: #583101;
-  text-transform: uppercase;
   letter-spacing: 0.2em;
   border-top: 1px solid #583101;
   border-bottom: 1px solid #583101;
@@ -340,14 +340,12 @@ body {
 .dimensions__detail {
   margin-bottom: 1em;
   font-size: 1.25rem;
-  text-transform: uppercase;
   letter-spacing: 0.15em;
 }
 .dimensions__instagram {
   padding: 0.5em 1em;
   font-size: 1.3rem;
   color: #583101;
-  text-transform: uppercase;
   letter-spacing: 0.1em;
   border: 1px solid transparent;
 }
@@ -373,7 +371,6 @@ body {
   margin-bottom: 1em;
   text-align: center;
   font-size: 3.5rem;
-  text-transform: uppercase;
   letter-spacing: 0.12em;
 }
 .header__instagram {
@@ -383,7 +380,7 @@ body {
   margin-bottom: 1.2em;
   max-width: 100%;
 }
-.header__model-banner-tablet {
+.header__model-banner--deskop {
   display: none;
 }
 
@@ -404,7 +401,6 @@ body {
 .contact__name {
   padding: 1em 1em 0 1em;
   font-size: 1.3rem;
-  text-transform: uppercase;
   letter-spacing: 0.5em;
 }
 .contact__job-title {
@@ -553,6 +549,24 @@ body {
   margin: 1em 0 2em;
 }
 
+.about {
+  flex-direction: column;
+  max-width: 550px;
+  margin: 6em 3.5em 2em;
+}
+.about__text {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.about__h2-text {
+  padding: 1em 0.5em;
+  letter-spacing: 0.2em;
+  color: #583101;
+}
+
 @media (max-width: 320px) {
   .nav__link {
     font-size: 1.4rem;
@@ -580,6 +594,11 @@ body {
     padding: 1em 2em;
   }
 }
+@media (min-width: 621px) {
+  .about {
+    margin: 6em auto 2em;
+  }
+}
 @media (min-width: 768px) {
   ::-moz-placeholder {
     font-size: 1.15rem;
@@ -590,11 +609,20 @@ body {
   .nav__link {
     font-size: 1.8rem;
   }
+  .main-banner {
+    background-image: url("../img/banner-nudyess-models-deskop.webp");
+  }
   .heading__main {
     font-size: 2.25rem;
   }
   .model-card__name {
     font-size: 1.75rem;
+  }
+  .model-card__img--deskop {
+    display: block;
+  }
+  .model-card__img--mobile {
+    display: none;
   }
   .dimensions__button {
     font-size: 1.8rem;
@@ -635,7 +663,6 @@ body {
     width: 100%;
     font-size: 3.35rem;
     color: #583101;
-    text-transform: uppercase;
     text-align: center;
     letter-spacing: 0.15em;
     border: 1px solid transparent;
@@ -649,6 +676,12 @@ body {
   }
   .header__model-banner {
     margin-bottom: 0;
+  }
+  .header__model-banner--deskop {
+    display: block;
+  }
+  .header__model-banner--mobile {
+    display: none;
   }
   .grid-container-model {
     grid-template-columns: repeat(2, 1fr);
@@ -668,15 +701,19 @@ body {
   .application__btn-box {
     justify-content: space-evenly;
   }
+  .about__text {
+    margin-bottom: 4em;
+    font-size: 1.3rem;
+  }
+  .about__h2-text {
+    font-size: 1.6rem;
+  }
 }
 @media (min-width: 1024px) {
   .wrapper {
     margin: 0 auto;
     width: 100%;
     max-width: 1200px;
-  }
-  .main-banner {
-    background-image: url("../img/deskop-banner-2674-1783.webp");
   }
   .logo {
     transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
@@ -863,16 +900,29 @@ body {
     border: 1px solid #b08968;
     border-radius: 5px;
   }
-  .application__clear-btn, .application__apply-btn, .application__upload-label {
+  .application__clear-btn, .application__apply-btn, .application__upload-label, .application__close-btn {
     transition: color 0.3s linear, background-color 0.3s linear, border 0.3s linear;
     transition: box-shadow 0.3s linear;
   }
-  .application__clear-btn:focus, .application__apply-btn:focus, .application__upload-label:focus {
+  .application__clear-btn:focus, .application__apply-btn:focus, .application__upload-label:focus, .application__close-btn:focus {
     outline: none;
     background-color: transparent;
     box-shadow: 4px 4px 6px rgb(115, 104, 97);
   }
-  .application__clear-btn:hover, .application__apply-btn:hover, .application__upload-label:hover {
+  .application__clear-btn:hover, .application__apply-btn:hover, .application__upload-label:hover, .application__close-btn:hover {
     box-shadow: 4px 4px 6px rgb(161, 150, 142);
+  }
+  .about__h2-text {
+    border: 1px solid transparent;
+    transition: color 0.3s linear;
+  }
+  .about__h2-text:hover {
+    color: #b08968;
+  }
+  .about__h2-text:focus {
+    outline: none;
+    color: #b08968;
+    border: 1px solid #b08968;
+    border-radius: 5px;
   }
 }/*# sourceMappingURL=main.css.map */
