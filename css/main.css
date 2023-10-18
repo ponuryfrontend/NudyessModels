@@ -96,6 +96,7 @@ body {
   justify-content: center;
   align-items: center;
   transition: background-color linear 0.8s, box-shadow linear 0.8s;
+  z-index: 10;
 }
 
 .logo {
@@ -149,7 +150,7 @@ body {
   opacity: 0;
   transition: opacity linear 1s;
   overflow: hidden;
-  z-index: 10;
+  z-index: 100;
 }
 .nav--active {
   transform: translateX(0);
@@ -456,7 +457,7 @@ body {
 }
 .application__input {
   padding: 1.8em;
-  font-size: 1rem;
+  font-size: 1.2rem;
   color: #583101;
   text-align: center;
   border: 1px solid #583101;
