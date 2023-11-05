@@ -32,6 +32,7 @@
 </head>
 
 <body>
+    <php echo "test work properly"; ?>
     <nav class="nav">
         <button class="nav__close-btn" aria-label="Wyjdź z menu" type="button">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -96,7 +97,7 @@
                     </div>
                     <div class="application__form-container flex-center">
                         <h2 class="application__h2">send us your submit:</h2>
-                        <form action="mail.php" method="post" class="application__form">
+                        <form action="mail.php" method="get" class="application__form">
                             <div class="application__input-box flex-center">
                                 <label for="name" class="application__label">First name: </label>
                                 <input type="text" id="name" class="application__input" name="name"
