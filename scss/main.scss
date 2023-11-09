@@ -1055,4 +1055,15 @@ body {
 			}
 		}
 	}
+
+	.not-found {
+		&__info,
+		&__link {
+			font-size: 1.6rem;
+		}
+
+		&__link {
+			font-size: 1.7rem;
+		}
+	}
 }

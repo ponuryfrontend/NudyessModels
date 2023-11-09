@@ -927,4 +927,10 @@ body {
     border: 1px solid #b08968;
     border-radius: 5px;
   }
+  .not-found__info, .not-found__link {
+    font-size: 1.6rem;
+  }
+  .not-found__link {
+    font-size: 1.7rem;
+  }
 }/*# sourceMappingURL=main.css.map */
