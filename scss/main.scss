@@ -605,6 +605,24 @@ body {
 	}
 }
 
+.not-found {
+	flex-direction: column;
+	margin: 4em 0 0;
+	padding: 2em;
+
+	&__info, &__link {
+		padding: 2em 0;
+		font-size: 1.2rem;
+		text-align: center;
+	}
+
+	&__link {
+		color: $brown-color;
+		font-size: 1.4rem;
+		text-decoration: underline;
+	}
+}
+
 @media (max-width: 320px) {
 	.nav {
 		&__link {
