@@ -569,6 +569,22 @@ body {
   color: #583101;
 }
 
+.not-found {
+  flex-direction: column;
+  margin: 4em 0 0;
+  padding: 2em;
+}
+.not-found__info, .not-found__link {
+  padding: 2em 0;
+  font-size: 1.2rem;
+  text-align: center;
+}
+.not-found__link {
+  color: #583101;
+  font-size: 1.4rem;
+  text-decoration: underline;
+}
+
 @media (max-width: 320px) {
   .nav__link {
     font-size: 1.4rem;
@@ -709,6 +725,12 @@ body {
   }
   .about__h2-text {
     font-size: 1.6rem;
+  }
+  .not-found__info, .not-found__link {
+    font-size: 1.4rem;
+  }
+  .not-found__link {
+    font-size: 1.5rem;
   }
 }
 @media (min-width: 1024px) {
