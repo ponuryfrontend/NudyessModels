@@ -798,6 +798,17 @@ body {
 			font-size: 1.6rem;
 		}
 	}
+
+	.not-found {
+		&__info,
+		&__link {
+			font-size: 1.4rem;
+		}
+
+		&__link {
+			font-size: 1.5rem;
+		}
+	}
 }
 
 @media (min-width: 1024px) {
