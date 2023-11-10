@@ -1,0 +1,4 @@
+User-Agent: *
+Disallow: /mail.php
+
+Sitemap: https://mmcschool.pl/sitemap.xml
