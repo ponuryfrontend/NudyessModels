@@ -1,4 +1,5 @@
 User-Agent: *
-Disallow: /mail.php
+Disallow:
+Allow:
 
-Sitemap: https://mmcschool.pl/sitemap.xml
+Sitemap: https://nudyessmodels.com/sitemap.xml
