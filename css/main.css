@@ -585,19 +585,6 @@ body {
   text-decoration: underline;
 }
 
-.cookie {
-  padding: 0 0 3em;
-}
-
-.cookies {
-  margin: 5em 3em;
-  padding: 1em 0;
-  font-size: 1.2rem;
-  letter-spacing: 0.2em;
-  line-height: 1.5em;
-  text-align: justify;
-}
-
 @media (max-width: 320px) {
   .nav__link {
     font-size: 1.4rem;
