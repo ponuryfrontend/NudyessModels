@@ -610,7 +610,8 @@ body {
 	margin: 4em 0 0;
 	padding: 2em;
 
-	&__info, &__link {
+	&__info,
+	&__link {
 		padding: 2em 0;
 		font-size: 1.2rem;
 		text-align: center;
@@ -621,6 +622,15 @@ body {
 		font-size: 1.4rem;
 		text-decoration: underline;
 	}
+}
+
+.cookies {
+	margin: 5em 3em;
+	padding: 1em 0;
+	font-size: 1.2rem;
+	letter-spacing: 0.2em;
+	line-height: 1.5em;
+	text-align: justify;
 }
 
 @media (max-width: 320px) {
