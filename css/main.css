@@ -585,6 +585,10 @@ body {
   text-decoration: underline;
 }
 
+.cookie {
+  padding: 0 0 3em;
+}
+
 .cookies {
   margin: 5em 3em;
   padding: 1em 0;
