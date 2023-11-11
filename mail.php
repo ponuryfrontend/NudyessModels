@@ -1,5 +1,5 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if ($_SERVER["REQUEST_METHOD"] == "GET") {
     $name = $_POST["name"];
     $phone = $_POST["phone"];
     $age = $_POST["age"];
@@ -8,7 +8,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $instagram = $_POST['instagram'];
 
     $from = $_POST["email"];
-    $to = "casting@nudyess.com";
+    $to = "faktury@nudyess.com";
     $subject = "Zgłoszenie na modelkę Nudyess Models";
 
     $message_body = "Name: $name\nEmail: $email\nPhone Number: $phone\nAge: $age\nHeight: $height m\nCity: $city\nInstagram ID: $instagram";
@@ -43,9 +43,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail_status = mail($to, $subject, $output, $headers);
 
     if ($mail_status) {
-        header("Location: casting.html?mail_status=sent");
+        header("Location: /casting.html?mail_status=sent");
     } else {
-        header("Location: casting.html?mail_status=error");
+        header("Location: /casting.html?mail_status=error");
     }
 } else {
     http_response_code(400);
