@@ -24,12 +24,22 @@
     <meta property="og:image:height" content="630">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:title" content="Nudyess Models - Agencja modelek Warszawa">
-    <meta name="twitter:description" content="Zmieniamy przestarzałe wzorce, inspirując świat do akceptacji i miłości samej siebie.">
+    <meta name="twitter:description"
+        content="Zmieniamy przestarzałe wzorce, inspirując świat do akceptacji i miłości samej siebie.">
     <meta name="twitter:image" content="https://cdn.shopify.com/s/files/1/0561/7215/0807/files/socialshering.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Italiana&family=Castoro+Titling&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/main.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-C858E5ZXB1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-C858E5ZXB1');
+    </script>
 </head>
 
 <body>
@@ -107,8 +117,7 @@
                             <div class="application__input-box flex-center">
                                 <label for="email" class="application__label">Email:</label>
                                 <input type="email" id="email" name="email" class="application__input"
-                                    placeholder="Enter your email"
-                                    autocomplete="email">
+                                    placeholder="Enter your email" autocomplete="email">
                                 <p class="application__error-text">error</p>
                             </div>
                             <div class="application__input-box flex-center">
@@ -147,9 +156,13 @@
                                     behind your ears.</p>
                                 <p class="application__photo-instruction">We need to clearly see all facial features.
                                 </p>
-                                <p class="application__photo-instruction">Include one photo facing the camera directly (CLOSE-UP),
-                                    one from a slightly angled side (PROFILE), one photo facing the camera slightly catching hips and waist (WAIST-UP) and one full-length photo in high heels to showcase
-                                    your height and body composition (FULL LENGTH). All photos should be make up free and should be less than 3mb.</p>
+                                <p class="application__photo-instruction">Include one photo facing the camera directly
+                                    (CLOSE-UP),
+                                    one from a slightly angled side (PROFILE), one photo facing the camera slightly
+                                    catching hips and waist (WAIST-UP) and one full-length photo in high heels to
+                                    showcase
+                                    your height and body composition (FULL LENGTH). All photos should be make up free
+                                    and should be less than 3mb.</p>
                                 <label for="file" class="application__upload-label" accept="image/*" multiple="multiple"
                                     placeholder="Select at least 3 photos.">select photos</label>
                                 <input type="file" id="file" class="application__upload-file" accept="image/*"
