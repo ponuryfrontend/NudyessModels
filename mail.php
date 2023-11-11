@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
 
     $from = $_POST["email"];
     $to = "faktury@nudyess.com";
-    $subject = "Zgłoszenie na modelkę Nudyess Models";
+    $subject = "$name $height - zgłoszenie na modelkę Nudyess Models";
 
     $message_body = "Name: $name\nEmail: $email\nPhone Number: $phone\nAge: $age\nHeight: $height m\nCity: $city\nInstagram ID: $instagram";
 
@@ -36,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         $output .= "Content-Transfer-Encoding: base64\n\n";
         $output .= chunk_split(base64_encode(file_get_contents($fileTmpName)));
         $output .= "\n\n";
-    }
+    };
 
     $output .= "--PHP-mixed-$random_hash--";
 
