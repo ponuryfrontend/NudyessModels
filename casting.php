@@ -185,18 +185,6 @@
                                 legally obliged to do so. For detailed data protection information, please click on our
                                 data protection link in the footer!</p>
                         </form>
-
-                        <pre><?php 
-                        echo "files: \n";
-                        var_dump($_FILES);
-                        echo "post: \n";
-                        var_dump($_POST);
-
-                        echo "server";
-                        var_dump($_SERVER);
-
-                        ?><pre>
-
                     </div>
                 </div>
             </div>
