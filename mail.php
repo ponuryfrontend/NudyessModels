@@ -66,9 +66,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sprawdzanie statusu wysyłki
     if ($mail_status) {
-        header("Location: /casting.html?mail_status=sent");
+        header("Location: /casting.php?mail_status=sent");
     } else {
-        header("Location: /casting.html?mail_status=error");
+        header("Location: /casting.php?mail_status=error");
     }
 
 } else {
