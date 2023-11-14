@@ -550,12 +550,35 @@ body {
   margin: 1em 0 2em;
 }
 
-.about {
+.registration__info, .registration__box, .registration__email-box {
+  flex-direction: column;
+}
+.registration__email-box {
+  width: 100%;
+  margin-bottom: 1.5em;
+  background-color: #b08968;
+  border-radius: 1px solid #b08968;
+  cursor: pointer;
+}
+.registration__email {
+  width: 100%;
+  padding: 1em 0;
+  color: white;
+  letter-spacing: 0.2em;
+  text-align: center;
+}
+.registration__instruction {
+  padding: 0.75em 0 2em;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.about, .registration {
   flex-direction: column;
   max-width: 550px;
   margin: 6em 3.5em 2em;
 }
-.about__text {
+.about__text, .registration__text {
   margin-bottom: 1em;
   padding: 1em 0;
   font-size: 1.2rem;
@@ -563,9 +586,10 @@ body {
   line-height: 1.5em;
   text-align: justify;
 }
-.about__h2-text {
+.about__h2-text, .registration__h2-text {
   padding: 1em 0.5em;
   letter-spacing: 0.2em;
+  text-align: center;
   color: #583101;
 }
 
@@ -728,11 +752,22 @@ body {
   .application__btn-box {
     justify-content: space-evenly;
   }
-  .about__text {
+  .registration__email-box {
+    width: 70%;
+  }
+  .registration__email {
+    width: 70%;
+    font-size: 1.6rem;
+  }
+  .registration__instruction {
+    font-size: 1.4rem;
+    letter-spacing: 0.2em;
+  }
+  .about__text, .registration__text {
     margin-bottom: 2em;
     font-size: 1.3rem;
   }
-  .about__h2-text {
+  .about__h2-text, .registration__h2-text {
     font-size: 1.6rem;
   }
   .not-found__info, .not-found__link {
