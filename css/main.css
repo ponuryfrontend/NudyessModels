@@ -553,7 +553,6 @@ body {
 .reg {
   display: flex;
   flex-direction: column;
-  max-width: 550px;
   margin: 6em 3.5em 2em;
 }
 .reg__box {
@@ -598,7 +597,6 @@ body {
 
 .about {
   flex-direction: column;
-  max-width: 550px;
   margin: 6em 3.5em 2em;
 }
 .about__text {
@@ -670,7 +668,7 @@ body {
 }
 @media (min-width: 621px) {
   .about {
-    margin: 6em auto 2em;
+    margin: 6em 3.5em 2em;
   }
 }
 @media (min-width: 768px) {
@@ -775,16 +773,16 @@ body {
   .application__btn-box {
     justify-content: space-evenly;
   }
-  .registration__email-box {
+  .reg__email-box {
     width: 70%;
   }
-  .registration__email {
+  .reg__email {
     width: 70%;
     font-size: 1.6rem;
   }
-  .registration__instruction {
-    font-size: 1.4rem;
-    letter-spacing: 0.2em;
+  .reg__instruction {
+    font-size: 1.3rem;
+    letter-spacing: 0.15em;
   }
   .about__text,
   .registration__text {

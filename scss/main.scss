@@ -587,7 +587,6 @@ body {
 .reg {
 	display: flex;
 	flex-direction: column;
-	max-width: 550px;
 	margin: 6em 3.5em 2em;
 
 	&__box {
@@ -638,7 +637,6 @@ body {
 
 .about {
 	flex-direction: column;
-	max-width: 550px;
 	margin: 6em 3.5em 2em;
 
 	&__text {
@@ -727,7 +725,7 @@ body {
 
 @media (min-width: 621px) {
 	.about {
-		margin: 6em auto 2em;
+		margin: 6em 3.5em 2em;
 	}
 }
 
@@ -869,7 +867,8 @@ body {
 		}
 	}
 
-	.registration {
+	.reg {
+
 		&__email-box {
 			width: 70%;
 		}
@@ -880,8 +879,8 @@ body {
 		}
 
 		&__instruction {
-			font-size: 1.4rem;
-			letter-spacing: 0.2em;
+			font-size: 1.3rem;
+			letter-spacing: 0.15em;
 		}
 	}
 
