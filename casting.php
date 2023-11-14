@@ -168,7 +168,7 @@
                                 <label for="file" class="application__upload-label" accept="image/*" multiple="multiple"
                                     placeholder="Select at least 3 photos.">select photos</label>
                                 <input type="file" id="file" class="application__upload-file" accept="image/*"
-                                    multiple="multiple" placeholder="Select at least 4 photos." name="file">
+                                    multiple="multiple" placeholder="Select at least 4 photos." name="file[]">
                                 <p class="application__custom-text">Important: Hold Ctrl or Cmd to select multiple
                                     files. Follow the instructions above.</p>
                                 <p class="application__error-text">error</p>
