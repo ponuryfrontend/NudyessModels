@@ -20,7 +20,7 @@
 
         <!-- File Input for Attachment -->
         <label for="attachment">Attachment:</label>
-        <input type="file" id="attachment" name="attachment" accept=".pdf, .doc, .docx">
+        <input type="file" id="attachment" name="attachment" accept="image/*" multiple="multiple">
 
         <!-- Submit Button -->
         <button type="submit">Submit</button>
