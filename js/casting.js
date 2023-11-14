@@ -166,25 +166,29 @@ const checkErrors = () => {
 }
 
 sendFormBtn.addEventListener('click', e => {
-	e.preventDefault()
+console.log('send from btn begin');
 
-	checkApplication([
-		firstNameInput,
-		emailInput,
-		phoneInput,
-		ageInput,
-		heightInput,
-		cityInput,
-		instagramInput,
-		uploadFiles,
-	])
-	checkLengthAndLetters(firstNameInput, 3)
-	checkEmail(email)
-	checkPhoneNumber(phoneInput, 9)
-	checkAge()
-	checkHeight()
-	checkLengthAndLetters(cityInput, 2)
-	checkErrors()
+e.preventDefault()
+
+checkApplication([
+	firstNameInput,
+	emailInput,
+	phoneInput,
+	ageInput,
+	heightInput,
+	cityInput,
+	instagramInput,
+	uploadFiles,
+])
+checkLengthAndLetters(firstNameInput, 3)
+checkEmail(email)
+checkPhoneNumber(phoneInput, 9)
+checkAge()
+checkHeight()
+checkLengthAndLetters(cityInput, 2)
+checkErrors()
+
+console.log('send from btn end');
 })
 
 clearFormBtn.addEventListener('click', e => {
