@@ -152,13 +152,13 @@ const checkErrors = () => {
 		}
 	})
 
-	if (errorCount === 0 && document.location.search === '/casting.html?mail_status=sent') {
+	if (errorCount === 0 && document.location.search === '/casting.php?mail_status=sent') {
 		popup.classList.add('application__pop-up--active')
 		popupText.textContent = 'Your application has been sent! We will contact you as soon as it possible. Thank You!'
 		document.body.classList.add('lock-scroll')
 	}
 
-	if (errorCount > 0 && document.location.search === '/casting.html?mail_status=error') {
+	if (errorCount > 0 && document.location.search === '/casting.php?mail_status=error') {
 		popup.classList.add('application__pop-up--active')
 		popupText.textContent = 'Error! Your application has not been sent! Contact us at casting@nudyess.com !'
 		document.body.classList.add('lock-scroll')
