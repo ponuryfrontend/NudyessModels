@@ -40,12 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $output .= "\n\n--PHP-alt-$random_hash--\n\n";
 
     // // Dodawanie załączników
-    foreach ($_FILES['file'] as $att) {
-        $fileTmpName = $att['tmp_name'];
-        $fileType = $att['type'];
+    foreach ($_FILES['file']['name'] as $key => $name) {
+        $fileTmpName = $_FILES['file']['tmp_name'][$key];
+        $fileType = $_FILES['file']['type'][$key];
 
         // Sprawdzanie rozmiaru pliku
-        if ($att['size'] > 1024 * 1024 * 5) {
+        if ($_FILES['file']['size'][$key] > 1024 * 1024 * 5) {
             http_response_code(400);
             echo "File size exceeds the limit (5MB)";
             exit;
@@ -57,6 +57,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $output .= "Content-Transfer-Encoding: base64\n\n";
         $output .= chunk_split(base64_encode(file_get_contents($fileTmpName)));
         $output .= "\n\n";
+
+        var_dump($key);
+        var_dump($name);
     }
 
     $output .= "--PHP-mixed-$random_hash--";
