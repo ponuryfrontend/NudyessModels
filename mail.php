@@ -65,15 +65,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $mail_status = mail($to, mb_encode_mimeheader($subject), $output, $headers);
 
     // Sprawdzanie statusu wysyłki
-    /*if ($mail_status) {
+    if ($mail_status) {
         header("Location: /casting.html?mail_status=sent");
     } else {
         header("Location: /casting.html?mail_status=error");
-    }*/
+    }
 
-    var_dump($_FILES);
-    var_dump($_POST);
-    var_dump($output);
 } else {
     http_response_code(400);
     echo 'Invalid request.';
