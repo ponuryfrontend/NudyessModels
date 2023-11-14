@@ -40,12 +40,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $output .= "\n\n--PHP-alt-$random_hash--\n\n";
 
     // // Dodawanie załączników
-    foreach ($_FILES['file']['name'] as $key => $name) {
-        $fileTmpName = $_FILES['file']['tmp_name'][$key];
-        $fileType = $_FILES['file']['type'][$key];
+    foreach ($_FILES['file'] as $att) {
+        $fileTmpName = $att['tmp_name'];
+        $fileType = $att['type'];
 
         // Sprawdzanie rozmiaru pliku
-        if ($_FILES['file']['size'][$key] > 1024 * 1024 * 5) {
+        if ($att['size'] > 1024 * 1024 * 5) {
             http_response_code(400);
             echo "File size exceeds the limit (5MB)";
             exit;
