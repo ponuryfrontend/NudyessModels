@@ -143,22 +143,22 @@ const clearErrorClass = () => {
 }
 
 const checkErrors = () => {
-	const allInputs = document.querySelectorAll('.application__input-box')
-	let errorCount = 0
+	// const allInputs = document.querySelectorAll('.application__input-box')
+	// let errorCount = 0
 
-	allInputs.forEach(el => {
-		if (el.classList.contains('error')) {
-			errorCount++
-		}
-	})
+	// allInputs.forEach(el => {
+	// 	if (el.classList.contains('error')) {
+	// 		errorCount++
+	// 	}
+	// })
 
-	if (errorCount === 0 && document.location.search === '/casting.php?mail_status=sent') {
+	if (document.location.search === '/casting.php?mail_status=sent') {
 		popup.classList.add('application__pop-up--active')
 		popupText.textContent = 'Your application has been sent! We will contact you as soon as it possible. Thank You!'
 		document.body.classList.add('lock-scroll')
 	}
 
-	if (errorCount > 0 && document.location.search === '/casting.php?mail_status=error') {
+	if (document.location.search === '/casting.php?mail_status=error') {
 		popup.classList.add('application__pop-up--active')
 		popupText.textContent = 'Error! Your application has not been sent! Contact us at casting@nudyess.com !'
 		document.body.classList.add('lock-scroll')
@@ -166,29 +166,29 @@ const checkErrors = () => {
 }
 
 sendFormBtn.addEventListener('click', e => {
-console.log('send from btn begin');
+	console.log('send from btn begin')
 
-e.preventDefault()
+	e.preventDefault()
 
-checkApplication([
-	firstNameInput,
-	emailInput,
-	phoneInput,
-	ageInput,
-	heightInput,
-	cityInput,
-	instagramInput,
-	uploadFiles,
-])
-checkLengthAndLetters(firstNameInput, 3)
-checkEmail(email)
-checkPhoneNumber(phoneInput, 9)
-checkAge()
-checkHeight()
-checkLengthAndLetters(cityInput, 2)
-checkErrors()
+	checkApplication([
+		firstNameInput,
+		emailInput,
+		phoneInput,
+		ageInput,
+		heightInput,
+		cityInput,
+		instagramInput,
+		uploadFiles,
+	])
+	checkLengthAndLetters(firstNameInput, 3)
+	checkEmail(email)
+	checkPhoneNumber(phoneInput, 9)
+	checkAge()
+	checkHeight()
+	checkLengthAndLetters(cityInput, 2)
+	checkErrors()
 
-console.log('send from btn end');
+	console.log('send from btn end')
 })
 
 clearFormBtn.addEventListener('click', e => {
