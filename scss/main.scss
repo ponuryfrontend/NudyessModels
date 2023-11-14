@@ -584,13 +584,16 @@ body {
 	}
 }
 
-.registration {
+.reg {
 	display: flex;
 	flex-direction: column;
 	max-width: 550px;
 	margin: 6em 3.5em 2em;
-	
+
 	&__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
 		flex-direction: column;
 	}
 
@@ -602,7 +605,7 @@ body {
 		line-height: 1.5em;
 		text-align: justify;
 	}
-	
+
 	&__h2-text {
 		padding: 1em 0.5em;
 		letter-spacing: 0.2em;
@@ -646,7 +649,7 @@ body {
 		line-height: 1.5em;
 		text-align: justify;
 	}
-	
+
 	&__h2-text {
 		padding: 1em 0.5em;
 		letter-spacing: 0.2em;
@@ -870,19 +873,20 @@ body {
 		&__email-box {
 			width: 70%;
 		}
-		
+
 		&__email {
 			width: 70%;
 			font-size: 1.6rem;
 		}
-		
+
 		&__instruction {
 			font-size: 1.4rem;
 			letter-spacing: 0.2em;
 		}
 	}
 
-	.about, .registration {
+	.about,
+	.registration {
 		&__text {
 			margin-bottom: 2em;
 			font-size: 1.3rem;
