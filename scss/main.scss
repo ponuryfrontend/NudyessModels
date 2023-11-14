@@ -585,11 +585,29 @@ body {
 }
 
 .registration {
-
-	&__info,
-	&__box,
-	&__email-box {
+	display: flex;
+	flex-direction: column;
+	max-width: 550px;
+	margin: 6em 3.5em 2em;
+	
+	&__box {
 		flex-direction: column;
+	}
+
+	&__text {
+		margin-bottom: 1em;
+		padding: 1em 0;
+		font-size: 1.2rem;
+		letter-spacing: 0.2em;
+		line-height: 1.5em;
+		text-align: justify;
+	}
+	
+	&__h2-text {
+		padding: 1em 0.5em;
+		letter-spacing: 0.2em;
+		text-align: center;
+		color: $brown-color;
 	}
 
 	&__email-box {
@@ -615,7 +633,7 @@ body {
 	}
 }
 
-.about, .registration {
+.about {
 	flex-direction: column;
 	max-width: 550px;
 	margin: 6em 3.5em 2em;

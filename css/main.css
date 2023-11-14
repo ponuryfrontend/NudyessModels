@@ -550,8 +550,28 @@ body {
   margin: 1em 0 2em;
 }
 
-.registration__info, .registration__box, .registration__email-box {
+.registration {
+  display: flex;
   flex-direction: column;
+  max-width: 550px;
+  margin: 6em 3.5em 2em;
+}
+.registration__box {
+  flex-direction: column;
+}
+.registration__text {
+  margin-bottom: 1em;
+  padding: 1em 0;
+  font-size: 1.2rem;
+  letter-spacing: 0.2em;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.registration__h2-text {
+  padding: 1em 0.5em;
+  letter-spacing: 0.2em;
+  text-align: center;
+  color: #583101;
 }
 .registration__email-box {
   width: 100%;
@@ -573,12 +593,12 @@ body {
   text-align: center;
 }
 
-.about, .registration {
+.about {
   flex-direction: column;
   max-width: 550px;
   margin: 6em 3.5em 2em;
 }
-.about__text, .registration__text {
+.about__text {
   margin-bottom: 1em;
   padding: 1em 0;
   font-size: 1.2rem;
@@ -586,7 +606,7 @@ body {
   line-height: 1.5em;
   text-align: justify;
 }
-.about__h2-text, .registration__h2-text {
+.about__h2-text {
   padding: 1em 0.5em;
   letter-spacing: 0.2em;
   text-align: center;
