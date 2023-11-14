@@ -16,8 +16,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $height = $_POST['height'];
     $city = $_POST['city'];
     $instagram = $_POST['instagram'];
-    $from = $_POST["email"];
-    $to = "faktury@nudyess.com";
+    $from = "bookings@nudyessmodels.com";
+    $replayto = $_POST["email"];
+    $to = "casting@nudyess.com";
     $subject = "$name $height - zgłoszenie na modelkę Nudyess Models";
 
     // Generowanie unikalnego hasha
@@ -26,7 +27,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Tworzenie nagłówków
     $random_hash = md5(date('r', time()));
     $headers = "From: " . mb_encode_mimeheader($from) . "\r\n";
-    $headers .= "Reply-To: " . mb_encode_mimeheader($from) . "\r\n";
+    $headers .= "Reply-To: " . mb_encode_mimeheader($replayto) . "\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"PHP-mixed-$random_hash\"";
 
     // Tworzenie treści wiadomości
