@@ -39,25 +39,25 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $output .= "Name: $name\nEmail: $from\nPhone Number: $phone\nAge: $age\nHeight: $height m\nCity: $city\nInstagram ID: $instagram";
     $output .= "\n\n--PHP-alt-$random_hash--\n\n";
 
-    // Dodawanie załączników
-    foreach ($_FILES['file']['name'] as $key => $name) {
-        $fileTmpName = $_FILES['file']['tmp_name'][$key];
-        $fileType = $_FILES['file']['type'][$key];
+    // // Dodawanie załączników
+    // foreach ($_FILES['file']['name'] as $key => $name) {
+    //     $fileTmpName = $_FILES['file']['tmp_name'][$key];
+    //     $fileType = $_FILES['file']['type'][$key];
 
-        // Sprawdzanie rozmiaru pliku
-        if ($_FILES['file']['size'][$key] > 1024 * 1024 * 5) {
-            http_response_code(400);
-            echo "File size exceeds the limit (5MB)";
-            exit;
-        }
+    //     // Sprawdzanie rozmiaru pliku
+    //     if ($_FILES['file']['size'][$key] > 1024 * 1024 * 5) {
+    //         http_response_code(400);
+    //         echo "File size exceeds the limit (5MB)";
+    //         exit;
+    //     }
 
-        $output .= "--PHP-mixed-$random_hash\n";
-        $output .= "Content-Type: $fileType; name=\"$name\"\n";
-        $output .= "Content-Disposition: attachment\n";
-        $output .= "Content-Transfer-Encoding: base64\n\n";
-        $output .= chunk_split(base64_encode(file_get_contents($fileTmpName)));
-        $output .= "\n\n";
-    }
+    //     $output .= "--PHP-mixed-$random_hash\n";
+    //     $output .= "Content-Type: $fileType; name=\"$name\"\n";
+    //     $output .= "Content-Disposition: attachment\n";
+    //     $output .= "Content-Transfer-Encoding: base64\n\n";
+    //     $output .= chunk_split(base64_encode(file_get_contents($fileTmpName)));
+    //     $output .= "\n\n";
+    // }
 
     $output .= "--PHP-mixed-$random_hash--";
 
