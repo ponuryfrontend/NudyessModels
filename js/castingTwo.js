@@ -184,7 +184,7 @@ sendFormBtn.addEventListener('click', async e => {
 	formData.append('city', cityInput.value)
 	formData.append('instagram', instagramInput.value)
 
-    console.log('Dane formularza:', formData);
+	console.log('Dane formularza:', formData)
 
 	checkApplication([
 		firstNameInput,
@@ -210,14 +210,17 @@ sendFormBtn.addEventListener('click', async e => {
 	}
 
 	// Wyślij żądanie do pliku PHP
+	let responseData
+
 	try {
-		const response = await fetch('./mailTwo.php', options)
-		const data = await response.json()
-		checkErrors(data.status)
+		responseData = JSON.parse(data)
 	} catch (error) {
-		console.error('Error:', error)
-		checkErrors('error')
+		console.error('Błąd parsowania JSON:', error)
+		// Obsłuż błąd, na przykład ustaw responseData na pusty obiekt.
+		responseData = {}
 	}
+
+	checkErrors(responseData.status)
 })
 
 const scrollToTheTop = () => {
