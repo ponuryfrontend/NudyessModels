@@ -183,7 +183,6 @@ sendFormBtn.addEventListener('click', async (e) => {
     checkAge();
     checkHeight();
     checkLengthAndLetters(cityInput, 2);
-    checkErrors()
 
     // Obiekt FormData i dodaj dane formularza
     const formData = new FormData();
@@ -203,7 +202,7 @@ sendFormBtn.addEventListener('click', async (e) => {
 
     // Wyślij żądanie do pliku PHP
     try {
-        const response = await fetch('/mailTwo.php', options);
+        const response = await fetch('./mailTwo.php', options);
         const data = await response.json();
         checkErrors(data.status);
     } catch (error) {
