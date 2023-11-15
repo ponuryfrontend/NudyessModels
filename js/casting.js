@@ -143,14 +143,14 @@ const clearErrorClass = () => {
 }
 
 const checkErrors = () => {
-	// const allInputs = document.querySelectorAll('.application__input-box')
-	// let errorCount = 0
+	const allInputs = document.querySelectorAll('.application__input-box')
+	let errorCount = 0
 
-	// allInputs.forEach(el => {
-	// 	if (el.classList.contains('error')) {
-	// 		errorCount++
-	// 	}
-	// })
+	allInputs.forEach(el => {
+		if (el.classList.contains('error')) {
+			errorCount++
+		}
+	})
 
 	if (document.location.search === '/casting.php?mail_status=sent') {
 		popup.classList.add('application__pop-up--active')
