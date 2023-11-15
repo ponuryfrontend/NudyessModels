@@ -189,25 +189,21 @@ sendFormBtn.addEventListener('click', e => {
 	checkLengthAndLetters(cityInput, 2)
 	checkErrors()
 
-	// // Obiekt FormData i dodaj dane formularza
-    // const formData = new FormData();
-    // formData.append('name', firstNameInput.value);
-    // formData.append('email', emailInput.value);
+	const formData = new FormData(document.querySelector('.application__form'));
 
-	// // Obiekt opcji dla fetch
-    // const options = {
-    //     method: 'POST',
-    //     body: formData,
-    // };
+    // Make an AJAX request
+    fetch('/mail.php', {
+        method: 'POST',
+        body: formData,
+    })
+    .then(response => response.json())
+    .then(data => {
+        console.log(data);
+        // Handle the response as needed
+    })
+    .catch(error => console.error('Error:', error));
 
-    // // Wyślij żądanie do pliku PHP
-    // fetch('/mail.php', options)
-    //     .then(response => response.json())
-    //     .then(data => {
-    //         // Obsługa odpowiedź od serwera
-    //         console.log(data);
-    //     })
-    //     .catch(error => console.error('Error:', error));
+
 })
 
 clearFormBtn.addEventListener('click', e => {
