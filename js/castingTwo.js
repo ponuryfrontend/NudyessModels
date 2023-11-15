@@ -19,6 +19,8 @@ const uploadFiles = document.querySelector('#file')
 const closePopupBtn = document.querySelector('.application__close-btn')
 const popup = document.querySelector('.application__pop-up')
 const popupText = document.querySelector('.application__pop-up-text')
+// Obiekt FormData i dodaj dane formularza
+const formData = new FormData();
 
 const whiteningHeader = () => {
 	const scrollListener = window.scrollY
@@ -171,8 +173,6 @@ const checkErrors = (mailStatus) => {
 sendFormBtn.addEventListener('click', async (e) => {
     e.preventDefault();
 
-    // Obiekt FormData i dodaj dane formularza
-    const formData = new FormData();
     formData.append('name', firstNameInput.value);
     formData.append('email', emailInput.value);
     formData.append('phone', phoneInput.value);
