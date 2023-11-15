@@ -184,6 +184,8 @@ sendFormBtn.addEventListener('click', async e => {
 	formData.append('city', cityInput.value)
 	formData.append('instagram', instagramInput.value)
 
+    console.log('Dane formularza:', formData);
+
 	checkApplication([
 		firstNameInput,
 		emailInput,
