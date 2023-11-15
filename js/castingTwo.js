@@ -188,6 +188,11 @@ sendFormBtn.addEventListener('click', async (e) => {
     const formData = new FormData();
     formData.append('name', firstNameInput.value);
     formData.append('email', emailInput.value);
+    formData.append('phone', phoneInput.value);
+    formData.append('age', ageInput.value);
+    formData.append('height', heightInput.value);
+    formData.append('city', cityInput.value);
+    formData.append('instagram', instagramInput.value);
 
     // Obiekt opcji dla fetch
     const options = {
@@ -197,7 +202,7 @@ sendFormBtn.addEventListener('click', async (e) => {
 
     // Wyślij żądanie do pliku PHP
     try {
-        const response = await fetch('/mail.php', options);
+        const response = await fetch('/mailTwo.php', options);
         const data = await response.json();
         checkErrors(data.status);
     } catch (error) {

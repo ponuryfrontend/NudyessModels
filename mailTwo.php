@@ -1,4 +1,6 @@
 <?php
+header('Content-Type: application/json');
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Walidacja danych wejściowych
     // $requiredFields = ['name', 'phone', 'age', 'height', 'city', 'instagram', 'email'];
@@ -65,13 +67,15 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Sprawdzanie statusu wysyłki
     if ($mail_status) {
+        http_response_code(200);
         echo json_encode(['status' => 'sent']);
     } else {
+        http_response_code(500);
         echo json_encode(['status' => 'error']);
     }
 
 } else {
     http_response_code(400);
-    echo 'Invalid request.';
+    echo json_encode(['error' => 'Invalid request.']);
 }
 ?>
