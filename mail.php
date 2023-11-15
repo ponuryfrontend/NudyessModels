@@ -19,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $from = $_POST["email"];
     $replayto = $_POST["email"];
     $to = "casting@nudyess.com";
-    $subject = "$name $height - zgłoszenie na modelkę Nudyess Models";
+    $subject = "$name $age - zgłoszenie na modelkę Nudyess Models";
 
     // Generowanie unikalnego hasha
     $random_hash = md5(date('r', time()));
