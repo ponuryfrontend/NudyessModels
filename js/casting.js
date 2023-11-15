@@ -189,25 +189,25 @@ sendFormBtn.addEventListener('click', e => {
 	checkLengthAndLetters(cityInput, 2)
 	checkErrors()
 
-	// Obiekt FormData i dodaj dane formularza
-    const formData = new FormData();
-    formData.append('name', firstNameInput.value);
-    formData.append('email', emailInput.value);
+	// // Obiekt FormData i dodaj dane formularza
+    // const formData = new FormData();
+    // formData.append('name', firstNameInput.value);
+    // formData.append('email', emailInput.value);
 
-	// Obiekt opcji dla fetch
-    const options = {
-        method: 'POST',
-        body: formData,
-    };
+	// // Obiekt opcji dla fetch
+    // const options = {
+    //     method: 'POST',
+    //     body: formData,
+    // };
 
-    // Wyślij żądanie do pliku PHP
-    fetch('/mail.php', options)
-        .then(response => response.json())
-        .then(data => {
-            // Obsługa odpowiedź od serwera
-            console.log(data);
-        })
-        .catch(error => console.error('Error:', error));
+    // // Wyślij żądanie do pliku PHP
+    // fetch('/mail.php', options)
+    //     .then(response => response.json())
+    //     .then(data => {
+    //         // Obsługa odpowiedź od serwera
+    //         console.log(data);
+    //     })
+    //     .catch(error => console.error('Error:', error));
 })
 
 clearFormBtn.addEventListener('click', e => {
