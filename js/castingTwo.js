@@ -212,6 +212,8 @@ sendFormBtn.addEventListener('click', async e => {
 	const response = await fetch('./mailTwo.php', options)
 	const data = await response.text()
 
+	console.log('Odpowiedź serwera:', data)
+
 	let responseData
 
 	try {
