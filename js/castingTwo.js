@@ -170,6 +170,10 @@ const checkErrors = (mailStatus) => {
 
 sendFormBtn.addEventListener('click', async (e) => {
     e.preventDefault();
+
+    // Tutaj zadeklaruj zmienną formData
+    const formData = new FormData();
+
     checkApplication([
         firstNameInput,
         emailInput,
@@ -187,8 +191,7 @@ sendFormBtn.addEventListener('click', async (e) => {
     checkHeight();
     checkLengthAndLetters(cityInput, 2);
 
-    // Obiekt FormData i dodaj dane formularza
-    const formData = new FormData();
+    // Dodaj dane do obiektu FormData
     formData.append('name', firstNameInput.value);
     formData.append('email', emailInput.value);
     formData.append('phone', phoneInput.value);
