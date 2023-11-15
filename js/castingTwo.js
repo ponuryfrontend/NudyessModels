@@ -19,8 +19,6 @@ const uploadFiles = document.querySelector('#file')
 const closePopupBtn = document.querySelector('.application__close-btn')
 const popup = document.querySelector('.application__pop-up')
 const popupText = document.querySelector('.application__pop-up-text')
-// Obiekt FormData i dodaj dane formularza
-const formData = new FormData();
 
 const whiteningHeader = () => {
 	const scrollListener = window.scrollY
@@ -144,76 +142,81 @@ const clearErrorClass = () => {
 	})
 }
 
-const checkErrors = (mailStatus) => {
-    const allInputs = document.querySelectorAll('.application__input-box');
-    let errorCount = 0;
+const checkErrors = mailStatus => {
+	const allInputs = document.querySelectorAll('.application__input-box')
+	let errorCount = 0
 
-    allInputs.forEach(el => {
-        if (el.classList.contains('error')) {
-            errorCount++;
-        }
-    });
+	allInputs.forEach(el => {
+		if (el.classList.contains('error')) {
+			errorCount++
+		}
+	})
 
-    const urlParams = new URLSearchParams(window.location.search);
-    const queryMailStatus = urlParams.get('mail_status');
+	const urlParams = new URLSearchParams(window.location.search)
+	const queryMailStatus = urlParams.get('mail_status')
 
-    if (mailStatus === 'sent' || queryMailStatus === 'sent') {
-        popup.classList.add('application__pop-up--active');
-        popupText.textContent = 'Your application has been sent! We will contact you as soon as possible. Thank You!';
-        document.body.classList.add('lock-scroll');
-    }
+	if (mailStatus === 'sent' || queryMailStatus === 'sent') {
+		popup.classList.add('application__pop-up--active')
+		popupText.textContent = 'Your application has been sent! We will contact you as soon as possible. Thank You!'
+		document.body.classList.add('lock-scroll')
+	}
 
-    if (mailStatus === 'error' || queryMailStatus === 'error' || errorCount > 0) {
-        popup.classList.add('application__pop-up--active');
-        popupText.textContent = 'Error! Your application has not been sent! Contact us at casting@nudyess.com !';
-        document.body.classList.add('lock-scroll');
-    }
-};
+	if (mailStatus === 'error' || queryMailStatus === 'error' || errorCount > 0) {
+		popup.classList.add('application__pop-up--active')
+		popupText.textContent = 'Error! Your application has not been sent! Contact us at casting@nudyess.com !'
+		document.body.classList.add('lock-scroll')
+	}
+}
 
-sendFormBtn.addEventListener('click', async (e) => {
-    e.preventDefault();
+sendFormBtn.addEventListener('click', async e => {
+	e.preventDefault()
 
-    formData.append('name', firstNameInput.value);
-    formData.append('email', emailInput.value);
-    formData.append('phone', phoneInput.value);
-    formData.append('age', ageInput.value);
-    formData.append('height', heightInput.value);
-    formData.append('city', cityInput.value);
-    formData.append('instagram', instagramInput.value);
+	console.log('Przed deklaracją formData')
+	// Obiekt FormData i dodaj dane formularza
+	const formData = new FormData()
+	console.log('Po deklaracji formData')
 
-    checkApplication([
-        firstNameInput,
-        emailInput,
-        phoneInput,
-        ageInput,
-        heightInput,
-        cityInput,
-        instagramInput,
-        uploadFiles,
-    ]);
-    checkLengthAndLetters(firstNameInput, 3);
-    checkEmail(email);
-    checkPhoneNumber(phoneInput, 9);
-    checkAge();
-    checkHeight();
-    checkLengthAndLetters(cityInput, 2);
+	formData.append('name', firstNameInput.value)
+	formData.append('email', emailInput.value)
+	formData.append('phone', phoneInput.value)
+	formData.append('age', ageInput.value)
+	formData.append('height', heightInput.value)
+	formData.append('city', cityInput.value)
+	formData.append('instagram', instagramInput.value)
 
-    // Obiekt opcji dla fetch
-    const options = {
-        method: 'POST',
-        body: formData,
-    };
+	checkApplication([
+		firstNameInput,
+		emailInput,
+		phoneInput,
+		ageInput,
+		heightInput,
+		cityInput,
+		instagramInput,
+		uploadFiles,
+	])
+	checkLengthAndLetters(firstNameInput, 3)
+	checkEmail(email)
+	checkPhoneNumber(phoneInput, 9)
+	checkAge()
+	checkHeight()
+	checkLengthAndLetters(cityInput, 2)
 
-    // Wyślij żądanie do pliku PHP
-    try {
-        const response = await fetch('./mailTwo.php', options);
-        const data = await response.json();
-        checkErrors(data.status);
-    } catch (error) {
-        console.error('Error:', error);
-        checkErrors('error');
-    }
-});
+	// Obiekt opcji dla fetch
+	const options = {
+		method: 'POST',
+		body: formData,
+	}
+
+	// Wyślij żądanie do pliku PHP
+	try {
+		const response = await fetch('./mailTwo.php', options)
+		const data = await response.json()
+		checkErrors(data.status)
+	} catch (error) {
+		console.error('Error:', error)
+		checkErrors('error')
+	}
+})
 
 const scrollToTheTop = () => {
 	window.scrollTo({ top: 0, behavior: 'smooth' })
