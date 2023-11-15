@@ -232,7 +232,7 @@
             </p>
         </div>
     </footer>
-    <script src="./js/casting.js"></script>
+    <!-- <script src="./js/casting.js"></script> -->
 </body>
 
 </html>
