@@ -171,8 +171,15 @@ const checkErrors = (mailStatus) => {
 sendFormBtn.addEventListener('click', async (e) => {
     e.preventDefault();
 
-    // Tutaj zadeklaruj zmienną formData
+    // Obiekt FormData i dodaj dane formularza
     const formData = new FormData();
+    formData.append('name', firstNameInput.value);
+    formData.append('email', emailInput.value);
+    formData.append('phone', phoneInput.value);
+    formData.append('age', ageInput.value);
+    formData.append('height', heightInput.value);
+    formData.append('city', cityInput.value);
+    formData.append('instagram', instagramInput.value);
 
     checkApplication([
         firstNameInput,
@@ -190,15 +197,6 @@ sendFormBtn.addEventListener('click', async (e) => {
     checkAge();
     checkHeight();
     checkLengthAndLetters(cityInput, 2);
-
-    // Dodaj dane do obiektu FormData
-    formData.append('name', firstNameInput.value);
-    formData.append('email', emailInput.value);
-    formData.append('phone', phoneInput.value);
-    formData.append('age', ageInput.value);
-    formData.append('height', heightInput.value);
-    formData.append('city', cityInput.value);
-    formData.append('instagram', instagramInput.value);
 
     // Obiekt opcji dla fetch
     const options = {
