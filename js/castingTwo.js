@@ -152,6 +152,9 @@ const checkErrors = (mailStatus) => {
         }
     });
 
+    const urlParams = new URLSearchParams(window.location.search);
+    const queryMailStatus = urlParams.get('mail_status');
+
     if (mailStatus === 'sent' || queryMailStatus === 'sent') {
         popup.classList.add('application__pop-up--active');
         popupText.textContent = 'Your application has been sent! We will contact you as soon as possible. Thank You!';
