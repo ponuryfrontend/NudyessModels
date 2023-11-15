@@ -143,27 +143,30 @@ const clearErrorClass = () => {
 }
 
 const checkErrors = () => {
-	const allInputs = document.querySelectorAll('.application__input-box')
-	let errorCount = 0
+    const allInputs = document.querySelectorAll('.application__input-box');
+    let errorCount = 0;
 
-	allInputs.forEach(el => {
-		if (el.classList.contains('error')) {
-			errorCount++
-		}
-	})
+    allInputs.forEach(el => {
+        if (el.classList.contains('error')) {
+            errorCount++;
+        }
+    });
 
-	if (document.location.search === '/casting.php?mail_status=sent') {
-		popup.classList.add('application__pop-up--active')
-		popupText.textContent = 'Your application has been sent! We will contact you as soon as it possible. Thank You!'
-		document.body.classList.add('lock-scroll')
-	}
+    const urlParams = new URLSearchParams(window.location.search);
+    const mailStatus = urlParams.get('mail_status');
 
-	if (document.location.search === '/casting.php?mail_status=error') {
-		popup.classList.add('application__pop-up--active')
-		popupText.textContent = 'Error! Your application has not been sent! Contact us at casting@nudyess.com !'
-		document.body.classList.add('lock-scroll')
-	}
-}
+    if (errorCount === 0 && mailStatus === 'sent') {
+        popup.classList.add('application__pop-up--active');
+        popupText.textContent = 'Your application has been sent! We will contact you as soon as possible. Thank You!';
+        document.body.classList.add('lock-scroll');
+    }
+
+    if (errorCount > 0 && mailStatus === 'error') {
+        popup.classList.add('application__pop-up--active');
+        popupText.textContent = 'Error! Your application has not been sent! Contact us at casting@nudyess.com !';
+        document.body.classList.add('lock-scroll');
+    }
+};
 
 sendFormBtn.addEventListener('click', e => {
 	console.log('send from btn begin')
