@@ -13,10 +13,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
     $phone = $_POST["phone"];
     $age = $_POST["age"];
-    $height = $_POST['height'];
-    $city = $_POST['city'];
-    $instagram = $_POST['instagram'];
-    $from = "bookings@nudyessmodels.com";
+    $height = $_POST["height"];
+    $city = $_POST["city"];
+    $instagram = $_POST["instagram"];
+    $from = $_POST["email"];
     $replayto = $_POST["email"];
     $to = "casting@nudyess.com";
     $subject = "$name $height - zgłoszenie na modelkę Nudyess Models";

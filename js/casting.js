@@ -148,6 +148,7 @@ const checkErrors = () => {
 
     allInputs.forEach(el => {
         if (el.classList.contains('error')) {
+			console.log(errorCount);
             errorCount++;
         }
     });
