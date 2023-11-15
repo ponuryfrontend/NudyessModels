@@ -109,7 +109,7 @@
                     </div>
                     <div class="application__form-container flex-center">
                         <h2 class="application__h2">send us your submit:</h2>
-                        <form action="./mail.php" method="post" class="application__form" enctype="multipart/form-data">
+                        <form action="./mail.php" method="post" class="application__form" enctype="multipart/form-data" role="form">
                             <div class="application__input-box flex-center">
                                 <label for="name" class="application__label">First name: </label>
                                 <input type="text" id="name" class="application__input" name="name"

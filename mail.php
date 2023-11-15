@@ -1,13 +1,13 @@
 <?php
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Walidacja danych wejściowych
-    $requiredFields = ['name', 'phone', 'age', 'height', 'city', 'instagram', 'email'];
-    foreach ($requiredFields as $field) {
-        if (empty($_POST[$field])) {
-            header("Location: /casting.php?mail_status=error");
-            exit;
-        }
-    }
+    // $requiredFields = ['name', 'phone', 'age', 'height', 'city', 'instagram', 'email'];
+    // foreach ($requiredFields as $field) {
+    //     if (empty($_POST[$field])) {
+    //         header("Location: /casting.php?mail_status=error");
+    //         exit;
+    //     }
+    // }
 
     $name = $_POST["name"];
     $phone = $_POST["phone"];
