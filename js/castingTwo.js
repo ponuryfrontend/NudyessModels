@@ -209,7 +209,9 @@ sendFormBtn.addEventListener('click', async e => {
 		body: formData,
 	}
 
-	// Wyślij żądanie do pliku PHP
+	const response = await fetch('./mailTwo.php', options)
+	const data = await response.text()
+
 	let responseData
 
 	try {
