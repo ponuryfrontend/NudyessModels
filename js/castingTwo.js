@@ -188,35 +188,29 @@ const checkErrors = mailStatus => {
 }
 
 const handleFormSubmission = async () => {
-	const formData = createFormData()
+    const formData = createFormData();
 
-	console.log('Dane formularza:', formData)
+    console.log('Dane formularza:', formData);
 
-	const options = {
-		method: 'POST',
-		body: formData,
-	}
+    const options = {
+        method: 'POST',
+        body: formData,
+    };
 
-	try {
-		const response = await fetch('./mailTwo.php', options)
-		const data = await response.text()
+    try {
+        const response = await fetch('./mailTwo.php', options);
+        const data = await response.json(); // Oczekuj odpowiedzi w formie JSON
 
-		console.log('Odpowiedź serwera:', data)
+        console.log('Odpowiedź serwera:', data);
 
-		let responseData
+        checkErrors(data.status);
+    } catch (error) {
+        console.error('Błąd podczas wysyłania formularza:', error);
 
-		try {
-			responseData = JSON.parse(data)
-		} catch (error) {
-			console.error('Błąd parsowania JSON:', error)
-			responseData = {}
-		}
-
-		checkErrors(responseData.status)
-	} catch (error) {
-		console.error('Błąd podczas wysyłania formularza:', error)
-	}
-}
+        // Obsłuż błąd i poinformuj użytkownika
+        checkErrors('error');
+    }
+};
 
 sendFormBtn.addEventListener('click', e => {
 	e.preventDefault()
