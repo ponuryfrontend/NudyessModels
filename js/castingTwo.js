@@ -42,6 +42,25 @@ const closeMobileMenu = () => {
 
 // APPLICATION FORM
 
+const createFormData = () => {
+	const formData = new FormData()
+
+	formData.append('name', firstNameInput.value)
+	formData.append('email', emailInput.value)
+	formData.append('phone', phoneInput.value)
+	formData.append('age', ageInput.value)
+	formData.append('height', heightInput.value)
+	formData.append('city', cityInput.value)
+	formData.append('instagram', instagramInput.value)
+
+	// Dodaj przesyłane pliki
+	for (const file of uploadFiles.files) {
+		formData.append('file[]', file)
+	}
+
+	return formData
+}
+
 const showApplicationError = (input, msg) => {
 	const applicationBox = input.parentElement
 	const errorMsg = applicationBox.querySelector('.application__error-text')
@@ -168,23 +187,39 @@ const checkErrors = mailStatus => {
 	}
 }
 
-sendFormBtn.addEventListener('click', async e => {
-	e.preventDefault()
-
-	console.log('Przed deklaracją formData')
-	// Obiekt FormData i dodaj dane formularza
-	const formData = new FormData()
-	console.log('Po deklaracji formData')
-
-	formData.append('name', firstNameInput.value)
-	formData.append('email', emailInput.value)
-	formData.append('phone', phoneInput.value)
-	formData.append('age', ageInput.value)
-	formData.append('height', heightInput.value)
-	formData.append('city', cityInput.value)
-	formData.append('instagram', instagramInput.value)
+const handleFormSubmission = async () => {
+	const formData = createFormData()
 
 	console.log('Dane formularza:', formData)
+
+	const options = {
+		method: 'POST',
+		body: formData,
+	}
+
+	try {
+		const response = await fetch('./mailTwo.php', options)
+		const data = await response.text()
+
+		console.log('Odpowiedź serwera:', data)
+
+		let responseData
+
+		try {
+			responseData = JSON.parse(data)
+		} catch (error) {
+			console.error('Błąd parsowania JSON:', error)
+			responseData = {}
+		}
+
+		checkErrors(responseData.status)
+	} catch (error) {
+		console.error('Błąd podczas wysyłania formularza:', error)
+	}
+}
+
+sendFormBtn.addEventListener('click', e => {
+	e.preventDefault()
 
 	checkApplication([
 		firstNameInput,
@@ -196,35 +231,15 @@ sendFormBtn.addEventListener('click', async e => {
 		instagramInput,
 		uploadFiles,
 	])
+
 	checkLengthAndLetters(firstNameInput, 3)
-	checkEmail(email)
+	checkEmail(emailInput.value)
 	checkPhoneNumber(phoneInput, 9)
 	checkAge()
 	checkHeight()
 	checkLengthAndLetters(cityInput, 2)
 
-	// Obiekt opcji dla fetch
-	const options = {
-		method: 'POST',
-		body: formData,
-	}
-
-	const response = await fetch('./mailTwo.php', options)
-	const data = await response.text()
-
-	console.log('Odpowiedź serwera:', data)
-
-	let responseData
-
-	try {
-		responseData = JSON.parse(data)
-	} catch (error) {
-		console.error('Błąd parsowania JSON:', error)
-		// Obsłuż błąd, na przykład ustaw responseData na pusty obiekt.
-		responseData = {}
-	}
-
-	checkErrors(responseData.status)
+	handleFormSubmission()
 })
 
 const scrollToTheTop = () => {

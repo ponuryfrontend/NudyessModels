@@ -3,13 +3,14 @@ header('Content-Type: application/json');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     // Walidacja danych wejściowych
-    // $requiredFields = ['name', 'phone', 'age', 'height', 'city', 'instagram', 'email'];
-    // foreach ($requiredFields as $field) {
-    //     if (empty($_POST[$field])) {
-    //         header("Location: /casting.php?mail_status=error");
-    //         exit;
-    //     }
-    // }
+    $requiredFields = ['name', 'phone', 'age', 'height', 'city', 'instagram', 'email'];
+    foreach ($requiredFields as $field) {
+        if (empty($_POST[$field])) {
+            http_response_code(400);
+            echo json_encode(['status' => 'error', 'message' => 'All fields are required']);
+            exit;
+        }
+    }
 
     $name = $_POST["name"];
     $phone = $_POST["phone"];
@@ -18,7 +19,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $city = $_POST["city"];
     $instagram = $_POST["instagram"];
     $from = $_POST["email"];
-    $replayto = $_POST["email"];
+    $replyTo = $_POST["email"];
     $to = "casting@nudyess.com";
     $subject = "$name $age - zgłoszenie na modelkę Nudyess Models";
 
@@ -26,9 +27,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $random_hash = md5(date('r', time()));
 
     // Tworzenie nagłówków
-    $random_hash = md5(date('r', time()));
     $headers = "From: " . mb_encode_mimeheader($from) . "\r\n";
-    $headers .= "Reply-To: " . mb_encode_mimeheader($replayto) . "\r\n";
+    $headers .= "Reply-To: " . mb_encode_mimeheader($replyTo) . "\r\n";
     $headers .= "Content-Type: multipart/mixed; boundary=\"PHP-mixed-$random_hash\"";
 
     // Tworzenie treści wiadomości
@@ -40,24 +40,26 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $output .= "Name: $name\nEmail: $from\nPhone Number: $phone\nAge: $age\nHeight: $height m\nCity: $city\nInstagram ID: $instagram";
     $output .= "\n\n--PHP-alt-$random_hash--\n\n";
 
-    // // Dodawanie załączników
-    foreach ($_FILES['file']['name'] as $key => $name) {
-        $fileTmpName = $_FILES['file']['tmp_name'][$key];
-        $fileType = $_FILES['file']['type'][$key];
+    // Dodawanie załączników
+    if (!empty($_FILES['file']['name'])) {
+        foreach ($_FILES['file']['name'] as $key => $name) {
+            $fileTmpName = $_FILES['file']['tmp_name'][$key];
+            $fileType = $_FILES['file']['type'][$key];
 
-        // Sprawdzanie rozmiaru pliku
-        if ($_FILES['file']['size'][$key] > 1024 * 1024 * 5) {
-            http_response_code(400);
-            echo "File size exceeds the limit (5MB)";
-            exit;
+            // Sprawdzanie rozmiaru pliku
+            if ($_FILES['file']['size'][$key] > 1024 * 1024 * 5) {
+                http_response_code(400);
+                echo json_encode(['status' => 'error', 'message' => 'File size exceeds the limit (5MB)']);
+                exit;
+            }
+
+            $output .= "--PHP-mixed-$random_hash\n";
+            $output .= "Content-Type: $fileType; name=\"$name\"\n";
+            $output .= "Content-Disposition: attachment\n";
+            $output .= "Content-Transfer-Encoding: base64\n\n";
+            $output .= chunk_split(base64_encode(file_get_contents($fileTmpName)));
+            $output .= "\n\n";
         }
-
-        $output .= "--PHP-mixed-$random_hash\n";
-        $output .= "Content-Type: $fileType; name=\"$name\"\n";
-        $output .= "Content-Disposition: attachment\n";
-        $output .= "Content-Transfer-Encoding: base64\n\n";
-        $output .= chunk_split(base64_encode(file_get_contents($fileTmpName)));
-        $output .= "\n\n";
     }
 
     $output .= "--PHP-mixed-$random_hash--";
@@ -71,11 +73,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo json_encode(['status' => 'sent']);
     } else {
         http_response_code(500);
-        echo json_encode(['status' => 'error']);
+        echo json_encode(['status' => 'error', 'message' => 'Error sending email']);
     }
 
 } else {
     http_response_code(400);
-    echo json_encode(['error' => 'Invalid request.']);
+    echo json_encode(['status' => 'error', 'message' => 'Invalid request.']);
 }
 ?>
