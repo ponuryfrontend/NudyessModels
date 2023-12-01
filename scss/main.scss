@@ -648,6 +648,10 @@ body {
 		text-align: justify;
 	}
 
+	&__links-box {
+		margin-bottom: 2.5em;
+	}
+
 	&__h2-text {
 		padding: 1em 0.5em;
 		letter-spacing: 0.2em;
@@ -868,7 +872,6 @@ body {
 	}
 
 	.reg {
-
 		&__email-box {
 			width: 70%;
 		}
