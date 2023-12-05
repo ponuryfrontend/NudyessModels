@@ -589,6 +589,22 @@ body {
   letter-spacing: 0.2em;
   text-align: center;
 }
+.reg__email-button {
+  width: 100%;
+  padding: 1em 0;
+  font-size: 1.3rem;
+  color: #583101;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  text-align: center;
+  background-color: transparent;
+  border: 1px solid #583101;
+  transition: background-color 0.5s linear, color 0.5s linear;
+}
+.reg__email-button:hover {
+  background-color: #583101;
+  color: white;
+}
 .reg__instruction {
   padding: 0.75em 0 2em;
   font-size: 1.2rem;

@@ -628,6 +628,24 @@ body {
 		text-align: center;
 	}
 
+	&__email-button {
+		width: 100%;
+		padding: 1em 0;
+		font-size: 1.3rem;
+		color: $brown-color;
+		letter-spacing: 0.2em;
+		text-transform: uppercase;
+		text-align: center;
+		background-color: transparent;
+		border: 1px solid $brown-color;
+		transition: background-color 0.5s linear, color 0.5s linear;
+
+		&:hover {
+			background-color: $brown-color;
+			color: $white-color;
+		}
+	}
+
 	&__instruction {
 		padding: 0.75em 0 2em;
 		font-size: 1.2rem;
@@ -1177,7 +1195,7 @@ body {
 			font-size: 1.7rem;
 		}
 	}
-	
+
 	.reg {
 		&__text {
 			font-size: 1.3rem;
