@@ -599,6 +599,7 @@ body {
   text-align: center;
   background-color: transparent;
   border: 1px solid #583101;
+  border-radius: 8px;
   transition: background-color 0.5s linear, color 0.5s linear;
 }
 .reg__email-button:hover {
