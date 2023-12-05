@@ -1045,4 +1045,7 @@ body {
   .reg__text {
     font-size: 1.3rem;
   }
+  .reg__email-button {
+    width: 50%;
+  }
 }/*# sourceMappingURL=main.css.map */
