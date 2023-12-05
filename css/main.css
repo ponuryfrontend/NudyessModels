@@ -589,7 +589,7 @@ body {
   letter-spacing: 0.2em;
   text-align: center;
 }
-.reg__email-link {
+.reg__email-button {
   width: 100%;
   padding: 1em 0;
   font-size: 1.3rem;
@@ -602,7 +602,7 @@ body {
   border-radius: 8px;
   transition: background-color 0.5s linear, color 0.5s linear;
 }
-.reg__email-link:hover {
+.reg__email-button:hover {
   background-color: #583101;
   color: white;
 }
